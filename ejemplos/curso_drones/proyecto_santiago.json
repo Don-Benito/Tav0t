@@ -1,0 +1,104 @@
+{
+  "nombre": "Edificio del laboratorio del curso - Santiago, puntos de control",
+  "elipsoide": "GRS80",
+  "modelo": {
+    "formato": "json",
+    "archivo": "edificio_santiago.json"
+  },
+  "georreferencia": {
+    "metodo": "puntos_control",
+    "tipo_altura": "ortometrica",
+    "permitir_escala": false,
+    "tolerancia_horizontal": 0.05,
+    "tolerancia_vertical": 0.1,
+    "puntos": [
+      {
+        "nombre": "A1",
+        "modelo": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utm": {
+          "este": 345984.059,
+          "norte": 6298095.465,
+          "zona": 19,
+          "hemisferio": "S"
+        },
+        "altura": 560.002
+      },
+      {
+        "nombre": "C1",
+        "modelo": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "utm": {
+          "este": 345995.44,
+          "norte": 6298099.258,
+          "zona": 19,
+          "hemisferio": "S"
+        },
+        "altura": 559.998
+      },
+      {
+        "nombre": "C3",
+        "modelo": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "utm": {
+          "este": 345992.282,
+          "norte": 6298108.744,
+          "zona": 19,
+          "hemisferio": "S"
+        },
+        "altura": 559.994
+      },
+      {
+        "nombre": "A3",
+        "modelo": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "utm": {
+          "este": 345980.902,
+          "norte": 6298104.951,
+          "zona": 19,
+          "hemisferio": "S"
+        },
+        "altura": 559.995
+      }
+    ]
+  },
+  "ondulacion_geoidal": 30.0,
+  "_comentario_ondulacion": "Valor ilustrativo. En un proyecto real use el modelo geoidal oficial del IGM o EGM2008 en el punto de amarre.",
+  "resultados": {
+    "caso": "SISMO_X",
+    "factor_amplificacion_deriva": 1.0,
+    "limite_deriva": 0.002,
+    "_comentario_limite": "NCh 433: 0.002 de la altura de entrepiso en el centro de masas. Se verifica sobre la deriva máxima, del lado de la seguridad.",
+    "tolerancia_niveles": 0.05,
+    "metrica_color": "relacion_dc",
+    "umbrales": [
+      0.6,
+      0.8,
+      1.0
+    ]
+  },
+  "salidas": {
+    "directorio": "../salida/curso_santiago",
+    "formatos": [
+      "geojson",
+      "kml",
+      "csv",
+      "informe"
+    ],
+    "factor_deformada": 50,
+    "modo_altitud_kml": "relativa",
+    "incluir_nodos_kml": true
+  }
+}

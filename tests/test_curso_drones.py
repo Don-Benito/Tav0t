@@ -41,11 +41,11 @@ class TestCalculadoraMision(unittest.TestCase):
 
     def test_densidad_aire(self):
         self.assertAlmostEqual(calc.densidad_aire(0.0), 1.225)
-        self.assertAlmostEqual(calc.densidad_aire(2600.0), 0.947, places=3)
+        self.assertAlmostEqual(calc.densidad_aire(3000.0), 0.909, places=3)
 
 
 class TestUbicarHallazgos(unittest.TestCase):
-    PROYECTO = CURSO.parent / "proyecto_puntos_control.json"
+    PROYECTO = CURSO / "proyecto_santiago.json"
     HALLAZGOS = CURSO / "hallazgos.json"
 
     def test_distancias(self):
@@ -60,13 +60,13 @@ class TestUbicarHallazgos(unittest.TestCase):
         ubicados = {u["id"]: u for u in lab.ubicar(self.PROYECTO, self.HALLAZGOS)}
         esperado = {"H01": "C1-02", "H02": "VX2-00", "H03": "VY3-02", "H04": "L3-01", "H05": None, "H06": "C1-20"}
         self.assertEqual({k: u["elemento"] for k, u in ubicados.items()}, esperado)
-        self.assertGreater(ubicados["H05"]["distancia_m"], lab.TOLERANCIA_M)  # muro de mampostería, no modelado
+        self.assertGreater(ubicados["H05"]["distancia_m"], lab.TOLERANCIA_M)  # muro de albañilería, no modelado
 
     def test_sin_ondulacion_los_hallazgos_bajan_n_metros(self):
         bien = lab.ubicar(self.PROYECTO, self.HALLAZGOS)
         mal = lab.ubicar(self.PROYECTO, self.HALLAZGOS, ondulacion=0.0)
         for b, m in zip(bien, mal):
-            self.assertAlmostEqual(b["modelo"][2] - m["modelo"][2], 4.0, delta=0.01)
+            self.assertAlmostEqual(b["modelo"][2] - m["modelo"][2], 30.0, delta=0.01)
             self.assertIsNone(m["elemento"])
 
 

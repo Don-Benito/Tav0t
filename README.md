@@ -59,12 +59,14 @@ python -m unittest discover -s tests -t .
 ## Curso de inspección de edificaciones y estructuras con drones
 
 Curso de 40 horas, en 10 módulos, para planear, ejecutar y documentar
-inspecciones con dron y llevar los hallazgos al modelo estructural:
+inspecciones con dron y llevar los hallazgos al modelo estructural, con
+normativa chilena (DAN 151 de la DGAC, normas NCh, SIRGAS-Chile):
 [docs/curso_inspeccion_drones/](docs/curso_inspeccion_drones/README.md).
 
 Incluye una calculadora de misión (GSD, distancia, malla de fotos de fachada) y
-un laboratorio que ubica los hallazgos de la inspección en los elementos del
-modelo con este módulo de georreferenciación:
+un laboratorio que ubica los hallazgos de la inspección de un edificio en
+Santiago (UTM 19S, límite de deriva de la NCh 433) en los elementos del modelo
+con este módulo de georreferenciación:
 
 ```bash
 python ejemplos/curso_drones/calculadora_mision.py fachada --camara gran_angular --ancho 30 --alto 24 --distancia 6

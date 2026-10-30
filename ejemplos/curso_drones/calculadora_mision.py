@@ -3,7 +3,7 @@
     python ejemplos/curso_drones/calculadora_mision.py gsd --camara gran_angular --distancia 6
     python ejemplos/curso_drones/calculadora_mision.py distancia --camara zoom --gsd 0.5
     python ejemplos/curso_drones/calculadora_mision.py fachada --camara gran_angular --ancho 30 --alto 24 --distancia 6
-    python ejemplos/curso_drones/calculadora_mision.py densidad --altitud 2600
+    python ejemplos/curso_drones/calculadora_mision.py densidad --altitud 3000
 
 Resuelve los cálculos del módulo 4 del curso (docs/curso_inspeccion_drones/):
 resolución en el objeto (GSD), distancia de vuelo, huella de la foto, malla de

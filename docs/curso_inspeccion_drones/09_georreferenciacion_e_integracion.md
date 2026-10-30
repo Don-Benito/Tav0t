@@ -1,113 +1,74 @@
 # Módulo 9. Georreferenciación de hallazgos e integración con el modelo estructural
 
-**Duración:** 2 h (0.5 h teoría + 1.5 h laboratorio) · **Competencia:** C9
+**Duración:** 2 h (0.5 h de teoría y 1.5 h de laboratorio) · **Competencia:** C9
 
-## Objetivos de aprendizaje
+Un hallazgo ubicado en un elemento del modelo sirve para decidir: "fisura de corte en el pilar C1-02, D/C 0.86" dice más que "fisura en la fachada norte, piso 1".
 
-1. Evita los errores de sistema de coordenadas y de alturas que mueven un
-   hallazgo de piso o de elemento.
-2. Lleva los hallazgos de la inspección al sistema del modelo estructural con
-   Tav0t y los asigna a elementos.
-3. Usa los resultados del análisis (demanda/capacidad, derivas) para
-   priorizar los hallazgos.
+**Objetivos de aprendizaje.**
 
-El fundamento de este módulo está en el
-[guion de funcionamiento del módulo de georreferenciación](../GUION_DE_FUNCIONAMIENTO.md),
-secciones 2 (conceptos) y 5.6 (ajuste por puntos de control).
-
----
+1. Evita los errores de marco de referencia, de proyección y de alturas que mueven un hallazgo de piso o de elemento.
+2. Lleva los hallazgos de la inspección al sistema del modelo estructural y los asigna a elementos.
+3. Usa los resultados del análisis (demanda/capacidad, derivas frente al límite de la NCh 433) para priorizar los hallazgos.
 
 ## 9.1 Por qué ubicar el hallazgo en el modelo
 
-Una ficha que dice "fisura en la fachada sur, piso 2" sirve para mandar a
-alguien a mirarla. Una que dice "fisura de cortante en la columna `C1-02`,
-relación D/C 0.86 en el caso sísmico" sirve para **decidir**. Ubicar el
-hallazgo en el modelo:
-
-- Relaciona el daño con la demanda calculada: un daño en un elemento muy
-  exigido es más preocupante.
+- Relaciona el daño con la demanda calculada: un daño en un elemento muy exigido es más preocupante.
 - Permite volver al mismo elemento en la siguiente inspección y comparar.
-- Pone los hallazgos en el mismo mapa que el modelo (GeoJSON en QGIS, KML en
-  Google Earth).
+- Pone los hallazgos en el mismo mapa que el modelo (GeoJSON en QGIS, KML en Google Earth).
 
-## 9.2 Los tres errores que mueven un hallazgo
+## 9.2 El marco de referencia en Chile
 
-### 1. Alturas elipsoidales y ortométricas mezcladas
+- **SIRGAS-Chile** es el sistema de referencia oficial, mantenido por el Instituto Geográfico Militar (IGM) en la Red Geodésica Nacional. La realización publicada por el IGM usa la época 2021.0 y el elipsoide GRS80.
+- En Chile continental se usa la proyección **UTM, husos 18 Sur y 19 Sur**. Santiago está en el huso 19 Sur.
+- **Chile se mueve.** Los grandes terremotos desplazan la red geodésica: después del terremoto del Maule de 2010 hubo puntos que se movieron metros. Por eso toda coordenada se declara con su marco y su época, y los puntos de control de una inspección se vuelven a medir después de un sismo fuerte.
 
-El GNSS y muchos programas de fotogrametría trabajan con **altura elipsoidal
-h**; los planos y la topografía con **altura ortométrica H**. Se relacionan con
-la ondulación geoidal *N* del sitio:
+## 9.3 Los tres errores que mueven un hallazgo
 
-```math
+**1. Alturas elipsoidales y ortométricas mezcladas.** El GNSS y muchos programas de fotogrametría trabajan con altura elipsoidal h; los planos y la topografía, con altura ortométrica H. Se relacionan con la ondulación geoidal N del sitio:
+
+```latex
 h = H + N
 ```
 
-Si los puntos de control se dieron con H y los hallazgos salen con h (o al
-revés), **todo se mueve N metros en vertical**. En el edificio de ejemplo
-N = 4 m: más que la altura de un piso. El laboratorio provoca este error a
-propósito.
+Si los puntos de control se dieron con H y los hallazgos salen con h (o al revés), todo se mueve N metros en vertical. En el laboratorio se usa N = 30 m, un valor ilustrativo: en un proyecto real N se obtiene en el punto con el modelo geoidal oficial del IGM o con EGM2008. Treinta metros son unos diez pisos.
 
-### 2. Sistema o zona de proyección distintos
+**2. Marco, huso o época distintos.** Verifique que los hallazgos y el proyecto están en el mismo marco (SIRGAS-Chile), en el mismo huso UTM y en la misma época. Una obra en el límite entre los husos 18 y 19 debe trabajarse completa en uno de ellos.
 
-- Verifique que los hallazgos y el proyecto están en el **mismo datum**
-  (WGS84 o MAGNA-SIRGAS, que para ubicar una obra difieren en menos de un
-  metro; ver la sección 2.5 del guion) y en la **misma zona UTM**.
-- En Colombia la cartografía oficial usa la proyección **Origen Nacional
-  (CTM12)**. El módulo de Tav0t trabaja con coordenadas geodésicas y UTM: si
-  la fotogrametría se procesó en CTM12, exporte los hallazgos en latitud,
-  longitud o UTM.
+**3. Norte verdadero y norte de cuadrícula.** Si el acimut del modelo se tomó de un plano en UTM y se declaró como verdadero, el modelo queda girado la convergencia de meridianos. En Santiago, lejos del meridiano central del huso 19, la convergencia es de 0.91°: 16 cm en 10 m. El software lo corrige si se declara `"norte": "cuadricula"`.
 
-### 3. Norte verdadero y norte de cuadrícula
+## 9.4 Flujo de integración
 
-Si el acimut del modelo se tomó de un plano en UTM y se declaró como
-verdadero, el modelo queda girado la convergencia de meridianos (0.077° en el
-ejemplo: 1.3 cm en 10 m). Es pequeño en un edificio, pero no en un puente
-largo. El módulo de Tav0t lo corrige si se declara `"norte": "cuadricula"`.
+1. Una red de puntos de control se mide en terreno con GNSS RTK o estación total, en SIRGAS-Chile.
+2. Esa misma red georreferencia el modelo fotogramétrico (módulo 8) y el modelo estructural.
+3. De la fotogrametría salen los hallazgos con coordenadas UTM y altura ortométrica.
+4. El script del laboratorio lleva cada hallazgo al sistema del modelo y lo asigna al elemento más cercano.
+5. Cada hallazgo se completa con la D/C del elemento y la deriva del piso, y pasa a la ficha y al informe.
 
-## 9.3 Flujo de integración
+Como la misma red de puntos georreferencia los dos modelos, ambos quedan en el mismo marco y los errores de dos georreferencias distintas no se suman.
 
-```mermaid
-flowchart LR
-    A[Red de puntos<br/>de control] --> B[Fotogrametría<br/>modelo 3D]
-    A --> C[Tav0t georef<br/>proyecto_puntos_control.json]
-    B --> D[Hallazgos<br/>UTM + H]
-    C --> E[Georreferencia<br/>del modelo]
-    D --> F[ubicar_hallazgos.py]
-    E --> F
-    F --> G[Hallazgo → elemento<br/>+ D/C + deriva]
-    G --> H[Fichas e informe]
-```
+## 9.5 Laboratorio
 
-La **misma red de puntos de control** georreferencia el modelo 3D de la
-fotogrametría y el modelo estructural. Así ambos quedan en el mismo marco.
+**Edificio de ejemplo:** marco de hormigón armado de 3 pisos en Santiago, 12 × 10 m, con pilares en los ejes A-B-C (x = 0, 6, 12 m) y 1-2-3 (y = 0, 5, 10 m), pisos a 3.5, 6.5 y 9.5 m y albañilería de relleno en las fachadas. Los resultados del análisis son sintéticos, solo para el curso. Los hallazgos de `ejemplos/curso_drones/hallazgos.json` simulan lo que entrega el modelo fotogramétrico: coordenadas UTM 19S y altura ortométrica en SIRGAS-Chile, con un error de un par de centímetros.
 
----
+**Nomenclatura de elementos:** `C{piso}-{iy}{ix}` pilares, `VX{piso}-{iy}{ix}` y `VY{piso}-{iy}{ix}` vigas en dirección X y Y, `L{piso}-{iy}{ix}` losas, donde `ix` e `iy` son los índices de los ejes (0, 1, 2).
 
-## 9.4 Laboratorio
-
-Edificio de ejemplo de Tav0t: pórtico de concreto de 3 pisos, 12 × 10 m,
-columnas en los ejes A-B-C (x = 0, 6, 12 m) y 1-2-3 (y = 0, 5, 10 m), pisos a
-3.5, 6.5 y 9.5 m. Los resultados del análisis son sintéticos (solo para el
-curso). Los hallazgos de `ejemplos/curso_drones/hallazgos.json` simulan lo que
-entrega el modelo fotogramétrico: coordenadas UTM y altura ortométrica, con un
-error de un par de centímetros.
-
-Nomenclatura de elementos: `C{piso}-{iy}{ix}` columnas, `VX{piso}-{iy}{ix}` y
-`VY{piso}-{iy}{ix}` vigas en dirección X y Y, `L{piso}-{iy}{ix}` losas, donde
-`ix` e `iy` son los índices de los ejes (0, 1, 2).
-
-### Paso 1. Georreferenciar el modelo con los puntos de control
+**Paso 1. Georreferenciar el modelo con los puntos de control y revisar las derivas.**
 
 ```bash
-python -m tav0t.georef ejecutar ejemplos/proyecto_puntos_control.json
+python -m tav0t.georef ejecutar ejemplos/curso_drones/proyecto_santiago.json
 ```
 
-Revise en la salida el RMS del ajuste (1.5 mm en horizontal y 3.1 mm en
-vertical) y las derivas por piso. El piso 2 (3.50-6.50 m) tiene la deriva más
-alta: 0.00486. Abra `ejemplos/salida/puntos_control/georref.kml` en Google
-Earth.
+Revise en la salida el huso (UTM 19S), el RMS del ajuste (1.7 mm en horizontal y 3.1 mm en vertical) y las derivas, verificadas con el límite de la NCh 433 (0.002 de la altura de entrepiso):
 
-### Paso 2. Ubicar los hallazgos
+| Piso | Cotas (m) | Deriva máxima | Uso del límite |
+| --- | --- | --: | --: |
+| 1 | 0.00-3.50 | 0.00149 | 75 % |
+| 2 | 3.50-6.50 | 0.00191 | 96 % |
+| 3 | 6.50-9.50 | 0.00156 | 78 % |
+
+La NCh 433 mide la deriva en el centro de masas (0.002) y permite en cualquier punto hasta 0.001 más; el laboratorio verifica la deriva máxima contra 0.002, del lado de la seguridad. El piso 2 queda al 96 % del límite. Abra `ejemplos/salida/curso_santiago/georref.kml` en Google Earth.
+
+**Paso 2. Ubicar los hallazgos.**
 
 ```bash
 python ejemplos/curso_drones/ubicar_hallazgos.py
@@ -119,58 +80,38 @@ Salida esperada:
 Hallazgo        x       y       z  Elemento    d (m)  Tipo
 H01         12.00   -0.25    1.83  C1-02        0.25  Fisura diagonal
 H02          3.00   -0.15    6.11  VX2-00       0.42  Fisura vertical
-H03         12.14    1.20    9.16  VY3-02       0.37  Desprendimiento con acero expuesto
+H03         12.14    1.20    9.16  VY3-02       0.37  Desprendimiento con armadura expuesta
 H04          9.21    2.58    9.55  L3-01        0.05  Mapa de fisuras
 H05          2.99   10.14    5.21  ¿VX2-20?     1.29  Anomalía térmica
 H06         -0.26   10.03    0.33  C1-20        0.26  Fisura horizontal
-
-A más de 0.6 m de todo elemento del modelo: H05. Revise si están en un elemento no modelado o si hay un error de coordenadas o de alturas.
 ```
 
-Qué hace el script:
+El script:
 
-1. Ejecuta la georreferencia del proyecto y la reconstruye
-   (`Georreferencia`).
-2. Convierte cada hallazgo de UTM + H a geodésicas y suma *N* para obtener h.
-3. Lo lleva al sistema del modelo con `geodesicas_a_modelo`.
-4. Calcula la distancia a cada barra (segmento) y a cada losa (polígono) y se
-   queda con el elemento más cercano.
-5. Si la distancia supera la tolerancia (0.6 m: medio lado de la sección más
-   grande más el error del modelo fotogramétrico), lo marca con `¿?`.
+1. Ejecuta la georreferencia del proyecto y la reconstruye.
+2. Convierte cada hallazgo de UTM + H a coordenadas geodésicas y suma N para obtener h.
+3. Lo lleva al sistema del modelo.
+4. Calcula la distancia a cada barra (segmento) y a cada losa (polígono) y se queda con el elemento más cercano.
+5. Si la distancia supera la tolerancia (0.6 m: medio lado de la sección más grande más el error del modelo fotogramétrico), lo marca entre signos de interrogación.
 
-La distancia de 0.25 m de `H01` es la mitad del lado de la columna de 50 cm:
-la fisura está en la cara exterior, y el modelo trabaja con ejes.
+La distancia de 0.25 m de H01 es la mitad del lado del pilar de 50 cm: la fisura está en la cara exterior, y el modelo trabaja con ejes.
 
-### Paso 3. Interpretar el hallazgo sin elemento
+**Paso 3. Interpretar el hallazgo sin elemento.** H05 es una anomalía térmica en el muro de albañilería de la fachada del eje 3, piso 2. El muro de relleno no está en el modelo, por eso queda a 1.29 m de la viga más cercana. No se descarta: se reporta asociado al marco del eje 3 entre los ejes A y B, en el piso que está al 96 % del límite de deriva. La pregunta para la verificación en sitio es si la anomalía es humedad (lo que sugiere su forma) o daño del muro por interacción con el marco (sección 6.4).
 
-`H05` es una anomalía térmica en el **muro de fachada del eje 3, piso 2**. El
-muro de mampostería de relleno no está en el modelo: por eso queda a 1.29 m de
-la viga más cercana. **No se descarta**: se reporta asociado al pórtico del
-eje 3 entre los ejes A y B, en el piso de **mayor deriva** del edificio. La
-pregunta para la verificación en sitio es si la anomalía es humedad (lo que
-sugiere su forma) o daño del muro por interacción con el pórtico (módulo 6.4).
-
-### Paso 4. Priorizar con el análisis
-
-Complete la tabla con la relación D/C del caso `SISMO_X` (archivo
-`ejemplos/edificio_3p.json`, sección `resultados`):
+**Paso 4. Priorizar con el análisis.** Relación D/C del caso SISMO\_X (archivo `ejemplos/curso_drones/edificio_santiago.json`, sección `resultados`):
 
 | Hallazgo | Elemento | D/C | Comentario |
-|---|---|---|---|
-| H01 | C1-02 | 0.86 | Fisura de cortante en columna esquinera de planta baja, elemento muy exigido |
+| --- | --- | --: | --- |
+| H01 | C1-02 | 0.86 | Fisura de corte en pilar esquinero del primer piso, elemento muy exigido |
 | H02 | VX2-00 | 0.78 | Fisura de flexión en viga de fachada |
 | H03 | VY3-02 | 0.38 | Corrosión: problema de durabilidad más que de demanda |
-| H04 | L3-01 | — | Losa de cubierta: retracción y falta de impermeabilización |
-| H05 | (muro, eje 3) | — | Piso de mayor deriva |
-| H06 | C1-20 | 0.92 | Fisura horizontal en el arranque de una columna esquinera de planta baja |
+| H04 | L3-01 | — | Losa de techumbre: retracción y falta de impermeabilización |
+| H05 | Muro, eje 3 | — | Piso al 96 % del límite de deriva |
+| H06 | C1-20 | 0.92 | Fisura horizontal en el arranque de un pilar esquinero del primer piso |
 
-¿Qué hallazgos irían primero a verificación de cerca? Justifique con la
-severidad, la confianza y la D/C.
+Ejercicio: ¿qué hallazgos irían primero a verificación de cerca? Justifique con la severidad, la confianza, la D/C y la deriva.
 
-### Paso 5. Provocar el error de alturas
-
-Suponga que la fotogrametría entregó los hallazgos con alturas mezcladas y
-que, en la práctica, se convierten sin sumar la ondulación geoidal:
+**Paso 5. Provocar el error de alturas.** Suponga que los hallazgos se convierten sin sumar la ondulación geoidal:
 
 ```bash
 python ejemplos/curso_drones/ubicar_hallazgos.py --ondulacion 0
@@ -178,52 +119,34 @@ python ejemplos/curso_drones/ubicar_hallazgos.py --ondulacion 0
 
 ```
 Hallazgo        x       y       z  Elemento    d (m)  Tipo
-H01         12.00   -0.25   -2.17  ¿C1-02?      2.19  Fisura diagonal
-H02          3.00   -0.15    2.11  ¿VX1-00?     1.40  Fisura vertical
-H03         12.14    1.20    5.16  ¿C2-02?      1.21  Desprendimiento con acero expuesto
-H04          9.21    2.58    5.55  ¿L2-01?      0.95  Mapa de fisuras
-H05          2.99   10.14    1.21  ¿VX1-20?     2.29  Anomalía térmica
-H06         -0.26   10.03   -3.67  ¿C1-20?      3.68  Fisura horizontal
+H01         12.00   -0.25  -28.17  ¿C1-02?     28.17  Fisura diagonal
+H02          3.00   -0.15  -23.89  ¿C1-01?     24.08  Fisura vertical
+H03         12.14    1.20  -20.84  ¿C1-02?     20.87  Desprendimiento con armadura expuesta
+H04          9.21    2.58  -20.45  ¿C1-12?     20.78  Mapa de fisuras
+H05          2.99   10.14  -24.79  ¿C1-20?     24.97  Anomalía térmica
+H06         -0.26   10.03  -29.67  ¿C1-20?     29.67  Fisura horizontal
 ```
 
-Todos los hallazgos bajan **exactamente N = 4 m**: dos quedan bajo el suelo y
-los demás en el piso de abajo. Observe que la planta (x, y) no cambia. **Si
-todos los hallazgos se desplazan lo mismo en vertical, sospeche de las
-alturas antes que de la fotogrametría.** Si el error fuera en planta, revise
-la zona UTM, el datum o el norte.
+Todos los hallazgos bajan exactamente N = 30 m y quedan bajo el terreno, mientras la planta (x, y) no cambia. **Si todos los hallazgos se desplazan lo mismo en vertical, sospeche de las alturas antes que de la fotogrametría.** Si el error es en planta, revise el huso UTM, el marco y su época, o el norte.
 
-### Paso 6. Llevar los hallazgos a las fichas
+**Paso 6. Llevar los hallazgos a las fichas.** Para H01 y H06, complete la ficha de hallazgo del anexo B, que trae H01 como ejemplo resuelto.
 
-Para `H01` y `H06`, diligencie la ficha de hallazgo del
-[anexo B](anexos/B_formatos.md#2-ficha-de-hallazgo) (el anexo trae `H01` como
-ejemplo resuelto).
+**Variaciones:**
 
-### Variaciones
-
-- Ubique los hallazgos con el proyecto paramétrico
-  (`--proyecto ejemplos/proyecto_parametrico.json`) y compare: las diferencias
-  son de 1 a 2 cm, del orden del ajuste.
-- Cambie la tolerancia (`--tolerancia 0.3`) y discuta qué hallazgos cambian y
-  por qué.
-
----
+- Ejecute `python -m tav0t.georef utm -33.4455 -70.657`, lea la convergencia de meridianos en el sitio (0.91°) y calcule cuánto se movería el pilar más alejado del amarre si se confundiera el norte.
+- Cambie la tolerancia (`--tolerancia 0.3`) y discuta qué hallazgos cambian y por qué.
 
 ## Errores frecuentes
 
 - Usar alturas elipsoidales en unos datos y ortométricas en otros.
-- Georreferenciar el modelo estructural y la fotogrametría con redes de
-  puntos distintas.
+- Mezclar coordenadas de antes y después de un terremoto sin declarar la época.
+- Georreferenciar el modelo estructural y la fotogrametría con redes de puntos distintas.
 - Descartar un hallazgo porque "no cae en ningún elemento".
 - Olvidar que el modelo trabaja con ejes y los daños están en las caras.
 
 ## Autoevaluación
 
-1. Todos los hallazgos aparecen 4 m más abajo que en la realidad. ¿Qué error
-   sospecha?
-2. ¿Por qué un hallazgo puede quedar lejos de todo elemento del modelo sin que
-   haya error?
-3. ¿Por qué conviene usar la misma red de puntos de control para la
-   fotogrametría y para el modelo estructural?
-4. ¿Cómo cambia la prioridad de una fisura la relación D/C del elemento?
-
-Respuestas en el [anexo C](anexos/C_evaluacion.md#1-respuestas-de-las-autoevaluaciones).
+1. Todos los hallazgos aparecen 30 m más abajo que en la realidad. ¿Qué error sospecha?
+2. ¿Por qué un hallazgo puede quedar lejos de todo elemento del modelo sin que haya error?
+3. ¿Por qué conviene usar la misma red de puntos de control para la fotogrametría y para el modelo estructural?
+4. ¿Cómo cambian la prioridad de una fisura la relación D/C del elemento y la deriva del piso?

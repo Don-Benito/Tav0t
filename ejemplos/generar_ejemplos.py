@@ -5,6 +5,10 @@
 Crea el modelo en formato neutro JSON, las mismas tablas en CSV y los puntos
 de control del proyecto por ajuste. Los resultados son sintéticos (no salen
 de un análisis real) y solo sirven para probar el módulo.
+
+También crea los datos del laboratorio del curso de inspección con drones
+(curso_drones/): el mismo edificio ubicado en Santiago de Chile, con sus puntos
+de control y los hallazgos simulados de la inspección.
 """
 
 from __future__ import annotations
@@ -17,19 +21,32 @@ from pathlib import Path
 DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(DIR.parent))
 
-from tav0t.georef import Georreferencia, geodesicas_a_utm  # noqa: E402
+from tav0t.georef import Georreferencia, geodesicas_a_utm, obtener_elipsoide  # noqa: E402
 
 VANOS_X = [0.0, 6.0, 12.0]
 VANOS_Y = [0.0, 5.0, 10.0]
 COTAS = [0.0, 3.5, 6.5, 9.5]
 DESPL_X_MM = [0.0, 12.0, 26.0, 38.0]  # desplazamiento de piso, caso SISMO_X
+# Laboratorio del curso: desplazamientos menores, para derivas del orden del
+# límite de la NCh 433 (0.002 en el centro de masas).
+DESPL_X_MM_CURSO = [0.0, 5.0, 10.5, 15.0]
+
+# Edificio del laboratorio del curso, en Santiago de Chile (SIRGAS-Chile, GRS80).
+PARAMETRICO_SANTIAGO = {
+    "elipsoide": "GRS80",
+    "georreferencia": {
+        "origen": {"latitud": -33.4455, "longitud": -70.657, "altura": 560.0},
+        "acimut_eje_x": 72.5,
+    },
+    "ondulacion_geoidal": 30.0,
+}
 
 
 def id_nodo(nivel: int, ix: int, iy: int) -> str:
     return f"{nivel}{iy}{ix + 1}"
 
 
-def construir_modelo() -> dict:
+def construir_modelo(despl_x_mm: list[float] = DESPL_X_MM) -> dict:
     nodos, elementos, despl, dc = [], [], {}, {}
     for k, z in enumerate(COTAS):
         for iy, y in enumerate(VANOS_Y):
@@ -37,8 +54,8 @@ def construir_modelo() -> dict:
                 nid = id_nodo(k, ix, iy)
                 nodos.append({"id": nid, "x": x, "y": y, "z": z})
                 # Traslación en X con una ligera torsión en planta.
-                torsion = 0.04 * DESPL_X_MM[k] * (iy - 1)
-                despl[nid] = [round(DESPL_X_MM[k] + torsion, 3), round(0.03 * DESPL_X_MM[k] * (ix - 1), 3), 0.0]
+                torsion = 0.04 * despl_x_mm[k] * (iy - 1)
+                despl[nid] = [round(despl_x_mm[k] + torsion, 3), round(0.03 * despl_x_mm[k] * (ix - 1), 3), 0.0]
 
     for k in range(1, len(COTAS)):
         for iy in range(len(VANOS_Y)):
@@ -104,19 +121,28 @@ def escribir_csv(modelo: dict, carpeta: Path) -> None:
     (carpeta / "desplazamientos.csv").write_text("\n".join(lineas) + "\n", encoding="utf-8")
 
 
+def _georreferencia_verdadera(proyecto_parametrico: dict) -> Georreferencia:
+    g = proyecto_parametrico["georreferencia"]
+    n_geoide = proyecto_parametrico["ondulacion_geoidal"]
+    return Georreferencia(
+        g["origen"]["latitud"],
+        g["origen"]["longitud"],
+        g["origen"]["altura"] + n_geoide,
+        g["acimut_eje_x"],
+        elipsoide=obtener_elipsoide(proyecto_parametrico.get("elipsoide", "WGS84")),
+    )
+
+
 def puntos_control_simulados(proyecto_parametrico: dict) -> list[dict]:
     """Simula un levantamiento topográfico de tres esquinas del edificio
     (coordenadas UTM con ruido de pocos milímetros)."""
-    g = proyecto_parametrico["georreferencia"]
     n_geoide = proyecto_parametrico["ondulacion_geoidal"]
-    georef = Georreferencia(
-        g["origen"]["latitud"], g["origen"]["longitud"], g["origen"]["altura"] + n_geoide, g["acimut_eje_x"]
-    )
+    georef = _georreferencia_verdadera(proyecto_parametrico)
     rnd = random.Random(7)
     puntos = []
     for nombre, (x, y) in {"A1": (0.0, 0.0), "C1": (12.0, 0.0), "C3": (12.0, 10.0), "A3": (0.0, 10.0)}.items():
         lat, lon, h = georef.modelo_a_geodesicas(x, y, 0.0)
-        utm = geodesicas_a_utm(lat, lon)
+        utm = geodesicas_a_utm(lat, lon, elipsoide=georef.elipsoide)
         puntos.append({
             "nombre": nombre,
             "modelo": [x, y, 0.0],
@@ -138,11 +164,11 @@ HALLAZGOS = [
      "Z_0143.JPG", (12.0, -0.25, 1.8)),
     ("H02", "Fisura vertical", "Cara exterior de la viga de fachada, centro de la luz, zona inferior.",
      "ancho < 0.5 mm (se ve, no se mide), largo 0.35 m", "Z_0217.JPG", (3.0, -0.15, 6.1)),
-    ("H03", "Desprendimiento con acero expuesto", "Fondo de la viga de borde de cubierta, cerca del apoyo.",
+    ("H03", "Desprendimiento con armadura expuesta", "Fondo de la viga de borde de techumbre, cerca del apoyo.",
      "0.25 × 0.15 m, barra corroída visible", "Z_0388.JPG", (12.15, 1.2, 9.15)),
-    ("H04", "Mapa de fisuras", "Cara superior de la losa de cubierta, sin impermeabilización.",
+    ("H04", "Mapa de fisuras", "Cara superior de la losa de techumbre, sin impermeabilización.",
      "fisuras finas en malla, < 0.5 mm, unos 2 m²", "Z_0402.JPG", (9.2, 2.6, 9.56)),
-    ("H05", "Anomalía térmica", "Muro de fachada del piso 2: zona fría con forma de mancha de humedad.",
+    ("H05", "Anomalía térmica", "Muro de albañilería del piso 2: zona fría con forma de mancha de humedad.",
      "ΔT = 2.8 °C, 1.1 m²", "T_0091.JPG", (3.0, 10.12, 5.2)),
     ("H06", "Fisura horizontal", "Arranque de la columna de esquina, cara exterior, con eflorescencias.",
      "ancho ≈ 2 mm, en parte del perímetro", "Z_0012.JPG", (-0.25, 10.0, 0.3)),
@@ -152,16 +178,13 @@ HALLAZGOS = [
 def hallazgos_simulados(proyecto_parametrico: dict) -> dict:
     """Simula lo que entrega el modelo fotogramétrico: coordenadas UTM y altura
     ortométrica de cada hallazgo, con un error de un par de centímetros."""
-    g = proyecto_parametrico["georreferencia"]
     n_geoide = proyecto_parametrico["ondulacion_geoidal"]
-    georef = Georreferencia(
-        g["origen"]["latitud"], g["origen"]["longitud"], g["origen"]["altura"] + n_geoide, g["acimut_eje_x"]
-    )
+    georef = _georreferencia_verdadera(proyecto_parametrico)
     rnd = random.Random(11)
     hallazgos = []
     for id_, tipo, descripcion, medida, foto, (x, y, z) in HALLAZGOS:
         lat, lon, h = georef.modelo_a_geodesicas(x, y, z)
-        utm = geodesicas_a_utm(lat, lon)
+        utm = geodesicas_a_utm(lat, lon, elipsoide=georef.elipsoide)
         hallazgos.append({
             "id": id_,
             "tipo": tipo,
@@ -177,8 +200,46 @@ def hallazgos_simulados(proyecto_parametrico: dict) -> dict:
             "altura": round(h - n_geoide + rnd.uniform(-0.03, 0.03), 3),
         })  # fmt: skip
     return {
-        "_comentario": "Hallazgos simulados para el laboratorio del curso. Altura ortométrica; datum WGS84.",
+        "_comentario": "Hallazgos simulados para el laboratorio del curso. Altura ortométrica; SIRGAS-Chile (GRS80).",
         "hallazgos": hallazgos,
+    }
+
+
+def proyecto_santiago(puntos: list[dict]) -> dict:
+    """Proyecto del laboratorio del curso: georreferencia por puntos de control
+    en Santiago y verificación de derivas con el límite de la NCh 433."""
+    return {
+        "nombre": "Edificio del laboratorio del curso - Santiago, puntos de control",
+        "elipsoide": PARAMETRICO_SANTIAGO["elipsoide"],
+        "modelo": {"formato": "json", "archivo": "edificio_santiago.json"},
+        "georreferencia": {
+            "metodo": "puntos_control",
+            "tipo_altura": "ortometrica",
+            "permitir_escala": False,
+            "tolerancia_horizontal": 0.05,
+            "tolerancia_vertical": 0.1,
+            "puntos": puntos,
+        },
+        "ondulacion_geoidal": PARAMETRICO_SANTIAGO["ondulacion_geoidal"],
+        "_comentario_ondulacion": "Valor ilustrativo. En un proyecto real use el modelo geoidal oficial del IGM "
+        "o EGM2008 en el punto de amarre.",
+        "resultados": {
+            "caso": "SISMO_X",
+            "factor_amplificacion_deriva": 1.0,
+            "limite_deriva": 0.002,
+            "_comentario_limite": "NCh 433: 0.002 de la altura de entrepiso en el centro de masas. Se verifica "
+            "sobre la deriva máxima, del lado de la seguridad.",
+            "tolerancia_niveles": 0.05,
+            "metrica_color": "relacion_dc",
+            "umbrales": [0.6, 0.8, 1.0],
+        },
+        "salidas": {
+            "directorio": "../salida/curso_santiago",
+            "formatos": ["geojson", "kml", "csv", "informe"],
+            "factor_deformada": 50,
+            "modo_altitud_kml": "relativa",
+            "incluir_nodos_kml": True,
+        },
     }
 
 
@@ -192,10 +253,15 @@ def main() -> None:
     control = json.loads(ruta_control.read_text(encoding="utf-8"))
     control["georreferencia"]["puntos"] = puntos_control_simulados(proyecto)
     ruta_control.write_text(json.dumps(control, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    hallazgos = hallazgos_simulados(proyecto)
-    (DIR / "curso_drones" / "hallazgos.json").write_text(
-        json.dumps(hallazgos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
+
+    curso = DIR / "curso_drones"
+    modelo_curso = construir_modelo(DESPL_X_MM_CURSO)
+    (curso / "edificio_santiago.json").write_text(json.dumps(modelo_curso, ensure_ascii=False, indent=1), encoding="utf-8")
+    for nombre, datos in (
+        ("proyecto_santiago.json", proyecto_santiago(puntos_control_simulados(PARAMETRICO_SANTIAGO))),
+        ("hallazgos.json", hallazgos_simulados(PARAMETRICO_SANTIAGO)),
+    ):
+        (curso / nombre).write_text(json.dumps(datos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("Ejemplos generados en", DIR)
 
 

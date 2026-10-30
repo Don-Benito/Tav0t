@@ -4,7 +4,8 @@
     python ejemplos/curso_drones/ubicar_hallazgos.py --ondulacion 0     # ejercicio: error de alturas
 
 Lee los hallazgos de la inspección (coordenadas UTM y altura ortométrica, como
-las entrega el software de fotogrametría en el mismo datum del proyecto), los
+las entrega el software de fotogrametría en el mismo datum del proyecto; en el
+laboratorio, SIRGAS-Chile y UTM 19S), los
 lleva al sistema del modelo estructural con la georreferencia del proyecto y
 busca el elemento más cercano a cada uno. Un hallazgo lejos de todo elemento
 suele estar en algo que no se modeló (mampostería, enchape, cubierta liviana).
@@ -130,7 +131,7 @@ def ubicar(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Ubica los hallazgos de una inspección con dron en el modelo.")
-    parser.add_argument("--proyecto", default=str(DIR.parent / "proyecto_puntos_control.json"))
+    parser.add_argument("--proyecto", default=str(DIR / "proyecto_santiago.json"))
     parser.add_argument("--hallazgos", default=str(DIR / "hallazgos.json"))
     parser.add_argument(
         "--ondulacion", type=float, help="N (m) para convertir los hallazgos; por defecto, la del proyecto"
