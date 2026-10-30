@@ -1,0 +1,89 @@
+{
+  "_comentario": "Hallazgos simulados para el laboratorio del curso. Altura ortométrica; datum WGS84.",
+  "hallazgos": [
+    {
+      "id": "H01",
+      "tipo": "Fisura diagonal",
+      "descripcion": "Cara exterior de la columna de esquina, tercio inferior.",
+      "medida": "ancho ≈ 1.5 mm, largo 0.9 m",
+      "foto": "Z_0143.JPG",
+      "utm": {
+        "este": 604827.109,
+        "norte": 514160.048,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2601.825
+    },
+    {
+      "id": "H02",
+      "tipo": "Fisura vertical",
+      "descripcion": "Cara exterior de la viga de fachada, centro de la luz, zona inferior.",
+      "medida": "ancho < 0.5 mm (se ve, no se mide), largo 0.35 m",
+      "foto": "Z_0217.JPG",
+      "utm": {
+        "este": 604818.505,
+        "norte": 514157.425,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2606.105
+    },
+    {
+      "id": "H03",
+      "tipo": "Desprendimiento con acero expuesto",
+      "descripcion": "Fondo de la viga de borde de cubierta, cerca del apoyo.",
+      "medida": "0.25 × 0.15 m, barra corroída visible",
+      "foto": "Z_0388.JPG",
+      "utm": {
+        "este": 604826.804,
+        "norte": 514161.473,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2609.158
+    },
+    {
+      "id": "H04",
+      "tipo": "Mapa de fisuras",
+      "descripcion": "Cara superior de la losa de cubierta, sin impermeabilización.",
+      "medida": "fisuras finas en malla, < 0.5 mm, unos 2 m²",
+      "foto": "Z_0402.JPG",
+      "utm": {
+        "este": 604823.595,
+        "norte": 514161.9,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2609.548
+    },
+    {
+      "id": "H05",
+      "tipo": "Anomalía térmica",
+      "descripcion": "Muro de fachada del piso 2: zona fría con forma de mancha de humedad.",
+      "medida": "ΔT = 2.8 °C, 1.1 m²",
+      "foto": "T_0091.JPG",
+      "utm": {
+        "este": 604815.391,
+        "norte": 514167.221,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2605.212
+    },
+    {
+      "id": "H06",
+      "tipo": "Fisura horizontal",
+      "descripcion": "Arranque de la columna de esquina, cara exterior, con eflorescencias.",
+      "medida": "ancho ≈ 2 mm, en parte del perímetro",
+      "foto": "Z_0012.JPG",
+      "utm": {
+        "este": 604812.329,
+        "norte": 514166.133,
+        "zona": 18,
+        "hemisferio": "N"
+      },
+      "altura": 2600.328
+    }
+  ]
+}

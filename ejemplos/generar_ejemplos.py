@@ -131,6 +131,57 @@ def puntos_control_simulados(proyecto_parametrico: dict) -> list[dict]:
     return puntos
 
 
+# Hallazgos de la inspección con dron del laboratorio del curso (módulo 9):
+# posición real sobre la cara del elemento, en coordenadas del modelo.
+HALLAZGOS = [
+    ("H01", "Fisura diagonal", "Cara exterior de la columna de esquina, tercio inferior.", "ancho ≈ 1.5 mm, largo 0.9 m",
+     "Z_0143.JPG", (12.0, -0.25, 1.8)),
+    ("H02", "Fisura vertical", "Cara exterior de la viga de fachada, centro de la luz, zona inferior.",
+     "ancho < 0.5 mm (se ve, no se mide), largo 0.35 m", "Z_0217.JPG", (3.0, -0.15, 6.1)),
+    ("H03", "Desprendimiento con acero expuesto", "Fondo de la viga de borde de cubierta, cerca del apoyo.",
+     "0.25 × 0.15 m, barra corroída visible", "Z_0388.JPG", (12.15, 1.2, 9.15)),
+    ("H04", "Mapa de fisuras", "Cara superior de la losa de cubierta, sin impermeabilización.",
+     "fisuras finas en malla, < 0.5 mm, unos 2 m²", "Z_0402.JPG", (9.2, 2.6, 9.56)),
+    ("H05", "Anomalía térmica", "Muro de fachada del piso 2: zona fría con forma de mancha de humedad.",
+     "ΔT = 2.8 °C, 1.1 m²", "T_0091.JPG", (3.0, 10.12, 5.2)),
+    ("H06", "Fisura horizontal", "Arranque de la columna de esquina, cara exterior, con eflorescencias.",
+     "ancho ≈ 2 mm, en parte del perímetro", "Z_0012.JPG", (-0.25, 10.0, 0.3)),
+]  # fmt: skip
+
+
+def hallazgos_simulados(proyecto_parametrico: dict) -> dict:
+    """Simula lo que entrega el modelo fotogramétrico: coordenadas UTM y altura
+    ortométrica de cada hallazgo, con un error de un par de centímetros."""
+    g = proyecto_parametrico["georreferencia"]
+    n_geoide = proyecto_parametrico["ondulacion_geoidal"]
+    georef = Georreferencia(
+        g["origen"]["latitud"], g["origen"]["longitud"], g["origen"]["altura"] + n_geoide, g["acimut_eje_x"]
+    )
+    rnd = random.Random(11)
+    hallazgos = []
+    for id_, tipo, descripcion, medida, foto, (x, y, z) in HALLAZGOS:
+        lat, lon, h = georef.modelo_a_geodesicas(x, y, z)
+        utm = geodesicas_a_utm(lat, lon)
+        hallazgos.append({
+            "id": id_,
+            "tipo": tipo,
+            "descripcion": descripcion,
+            "medida": medida,
+            "foto": foto,
+            "utm": {
+                "este": round(utm.este + rnd.uniform(-0.02, 0.02), 3),
+                "norte": round(utm.norte + rnd.uniform(-0.02, 0.02), 3),
+                "zona": utm.zona,
+                "hemisferio": utm.hemisferio,
+            },
+            "altura": round(h - n_geoide + rnd.uniform(-0.03, 0.03), 3),
+        })  # fmt: skip
+    return {
+        "_comentario": "Hallazgos simulados para el laboratorio del curso. Altura ortométrica; datum WGS84.",
+        "hallazgos": hallazgos,
+    }
+
+
 def main() -> None:
     modelo = construir_modelo()
     (DIR / "edificio_3p.json").write_text(json.dumps(modelo, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -141,6 +192,10 @@ def main() -> None:
     control = json.loads(ruta_control.read_text(encoding="utf-8"))
     control["georreferencia"]["puntos"] = puntos_control_simulados(proyecto)
     ruta_control.write_text(json.dumps(control, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    hallazgos = hallazgos_simulados(proyecto)
+    (DIR / "curso_drones" / "hallazgos.json").write_text(
+        json.dumps(hallazgos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     print("Ejemplos generados en", DIR)
 
 

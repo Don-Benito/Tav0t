@@ -56,11 +56,31 @@ Los resultados quedan en `ejemplos/salida/`. Abra el `.kml` en Google Earth o el
 python -m unittest discover -s tests -t .
 ```
 
-### Estructura
+## Curso de inspección de edificaciones y estructuras con drones
+
+Curso de 40 horas, en 10 módulos, para planear, ejecutar y documentar
+inspecciones con dron y llevar los hallazgos al modelo estructural:
+[docs/curso_inspeccion_drones/](docs/curso_inspeccion_drones/README.md).
+
+Incluye una calculadora de misión (GSD, distancia, malla de fotos de fachada) y
+un laboratorio que ubica los hallazgos de la inspección en los elementos del
+modelo con este módulo de georreferenciación:
+
+```bash
+python ejemplos/curso_drones/calculadora_mision.py fachada --camara gran_angular --ancho 30 --alto 24 --distancia 6
+```
+
+```bash
+python ejemplos/curso_drones/ubicar_hallazgos.py
+```
+
+## Estructura del repositorio
 
 ```
-tav0t/georef/      motor de georreferenciación
-docs/              guion de funcionamiento (especificación)
-ejemplos/          edificio de 3 pisos, proyectos de ejemplo y zonificación ficticia
-tests/             pruebas automáticas
+tav0t/georef/                  motor de georreferenciación
+docs/                          guion de funcionamiento (especificación)
+docs/curso_inspeccion_drones/  curso de inspección con drones
+ejemplos/                      edificio de 3 pisos, proyectos de ejemplo y zonificación ficticia
+ejemplos/curso_drones/         calculadora de misión y laboratorio del curso
+tests/                         pruebas automáticas
 ```
