@@ -1,0 +1,98 @@
+{
+  "nombre": "Edificio de ejemplo - ajuste por puntos de control",
+  "elipsoide": "WGS84",
+  "modelo": {
+    "formato": "json",
+    "archivo": "edificio_3p.json"
+  },
+  "georreferencia": {
+    "metodo": "puntos_control",
+    "tipo_altura": "ortometrica",
+    "permitir_escala": false,
+    "tolerancia_horizontal": 0.05,
+    "tolerancia_vertical": 0.1,
+    "puntos": [
+      {
+        "nombre": "A1",
+        "modelo": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utm": {
+          "este": 604815.602,
+          "norte": 514156.66,
+          "zona": 18,
+          "hemisferio": "N"
+        },
+        "altura": 2600.002
+      },
+      {
+        "nombre": "C1",
+        "modelo": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "utm": {
+          "este": 604827.032,
+          "norte": 514160.284,
+          "zona": 18,
+          "hemisferio": "N"
+        },
+        "altura": 2599.998
+      },
+      {
+        "nombre": "C3",
+        "modelo": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "utm": {
+          "este": 604824.014,
+          "norte": 514169.811,
+          "zona": 18,
+          "hemisferio": "N"
+        },
+        "altura": 2599.994
+      },
+      {
+        "nombre": "A3",
+        "modelo": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "utm": {
+          "este": 604812.585,
+          "norte": 514166.186,
+          "zona": 18,
+          "hemisferio": "N"
+        },
+        "altura": 2599.995
+      }
+    ]
+  },
+  "ondulacion_geoidal": 4.0,
+  "resultados": {
+    "caso": "SISMO_X",
+    "limite_deriva": 0.01,
+    "metrica_color": "desplazamiento",
+    "umbrales": [
+      0.01,
+      0.025,
+      0.035
+    ]
+  },
+  "salidas": {
+    "directorio": "salida/puntos_control",
+    "formatos": [
+      "geojson",
+      "kml",
+      "csv",
+      "informe"
+    ],
+    "factor_deformada": 50
+  }
+}

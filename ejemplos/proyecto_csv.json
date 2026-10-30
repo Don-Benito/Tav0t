@@ -1,0 +1,33 @@
+{
+  "nombre": "Edificio de ejemplo - entrada CSV",
+  "modelo": {
+    "formato": "csv",
+    "nodos": "csv/nodos.csv",
+    "elementos": "csv/elementos.csv",
+    "desplazamientos": "csv/desplazamientos.csv",
+    "caso": "SISMO_X",
+    "unidades": "m",
+    "unidades_resultados": "mm",
+    "eje_vertical": "Z"
+  },
+  "georreferencia": {
+    "metodo": "parametrico",
+    "origen": {
+      "utm": {"este": 604815.603, "norte": 514156.663, "zona": 18, "hemisferio": "N"},
+      "altura": 2600.0
+    },
+    "tipo_altura": "ortometrica",
+    "acimut_eje_x": 72.5,
+    "norte": "cuadricula"
+  },
+  "ondulacion_geoidal": 4.0,
+  "resultados": {
+    "limite_deriva": 0.01,
+    "metrica_color": "desplazamiento",
+    "umbrales": [0.01, 0.025, 0.035]
+  },
+  "salidas": {
+    "directorio": "salida/csv",
+    "formatos": ["geojson", "csv", "informe"]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "nombre": "Edificio de ejemplo - georreferencia paramétrica",
+  "elipsoide": "WGS84",
+  "modelo": {
+    "formato": "json",
+    "archivo": "edificio_3p.json"
+  },
+  "georreferencia": {
+    "metodo": "parametrico",
+    "origen": {
+      "latitud": 4.651,
+      "longitud": -74.055,
+      "altura": 2600.0
+    },
+    "tipo_altura": "ortometrica",
+    "punto_modelo": [0.0, 0.0, 0.0],
+    "acimut_eje_x": 72.5,
+    "norte": "verdadero"
+  },
+  "ondulacion_geoidal": 4.0,
+  "_comentario_ondulacion": "Valor ilustrativo. En un proyecto real use el modelo geoidal oficial (EGM2008 o el nacional) en el punto de amarre.",
+  "resultados": {
+    "caso": "SISMO_X",
+    "factor_amplificacion_deriva": 1.0,
+    "limite_deriva": 0.01,
+    "tolerancia_niveles": 0.05,
+    "metrica_color": "relacion_dc",
+    "umbrales": [0.6, 0.8, 1.0]
+  },
+  "zonificacion": {
+    "archivo": "zonificacion_ficticia.geojson"
+  },
+  "salidas": {
+    "directorio": "salida/parametrico",
+    "formatos": ["geojson", "kml", "csv", "informe"],
+    "factor_deformada": 50,
+    "modo_altitud_kml": "relativa",
+    "incluir_nodos_kml": true
+  }
+}

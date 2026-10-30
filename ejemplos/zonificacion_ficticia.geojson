@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "_comentario": "Zonificación FICTICIA solo para demostrar el módulo. No representa ninguna norma ni debe usarse en diseño.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"zona": "Z-2 (ficticia)", "aceleracion_pico_g": 0.25, "fuente": "Ejemplo ficticio"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-74.20, 4.50], [-74.00, 4.50], [-74.00, 4.80], [-74.20, 4.80], [-74.20, 4.50]],
+                        [[-74.15, 4.55], [-74.10, 4.55], [-74.10, 4.60], [-74.15, 4.60], [-74.15, 4.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"zona": "Z-3 (ficticia)", "aceleracion_pico_g": 0.35, "fuente": "Ejemplo ficticio"},
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [[[-74.00, 4.50], [-73.80, 4.50], [-73.80, 4.80], [-74.00, 4.80], [-74.00, 4.50]]],
+          [[[-74.15, 4.55], [-74.10, 4.55], [-74.10, 4.60], [-74.15, 4.60], [-74.15, 4.55]]]
+        ]
+      }
+    }
+  ]
+}

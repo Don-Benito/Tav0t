@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tav0t"
+version = "0.1.0"
+description = "Plataforma de análisis estructural: módulo de georreferenciación con motor propio"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+tav0t-georef = "tav0t.georef.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tav0t*"]
+
+[tool.ruff]
+line-length = 120
