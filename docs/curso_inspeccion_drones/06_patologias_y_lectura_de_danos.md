@@ -179,3 +179,58 @@ Las clasificaciones se comparan entre grupos y las diferencias se discuten. El t
 3. En un muro de albañilería confinada aparecen grietas en X que penetran en los pilares. ¿Qué indican?
 4. Con GSD de 1.64 mm/px, una fisura ocupa 2 px. ¿Cómo la reporta?
 5. ¿Por qué un enchape abombado en el piso 6 sobre una vereda sube de severidad?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** una fisura es perpendicular a la tracción que la abrió; primero se observa (qué, dónde, cómo), después se interpreta (por qué) y al final se califica (severidad y confianza).
+
+**Preparación:**
+
+- El banco de imágenes ordenado por material y tipo de daño, con casos chilenos: edificios de muros dañados en el terremoto del Maule de 2010, viviendas de albañilería confinada, corrosión en el borde costero.
+- Una viga de goma espuma con una cuadrícula dibujada, una tiza y una hoja de papel para las demostraciones.
+- Un visor de imágenes que muestre la posición en píxeles, para el ejercicio de medición.
+- Las 30 imágenes del taller y una planilla de clasificación por grupo.
+
+**Secuencia del módulo (360 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-20 | Apertura: "la fisura habla" | Hace las demostraciones de la viga de espuma, la tiza y el papel | Predicen dónde y cómo aparecerá la fisura |
+| 20-90 | 6.1 y 6.2 Hormigón armado | Proyecta una foto por patrón: flexión, corte, torsión, compresión, pilar corto, borde de muro, corrosión, retracción. Antes de explicar, pregunta | Para cada foto dicen qué, dónde, cómo y proponen la causa |
+| 90-105 | Pausa |  |  |
+| 105-130 | 6.3 Acero | Muestra corrosión, pandeo, uniones y soldaduras; marca lo que el dron no puede confirmar | Clasifican cada daño |
+| 130-165 | 6.4 Albañilería | Explica albañilería confinada, armada y de relleno con fotos de viviendas chilenas | Distinguen grieta en el paño de grieta que entra en los pilares |
+| 165-195 | 6.5 a 6.7 Fachadas, techumbres y daños posteriores a un sismo | Muestra enchapes, voladizos, techumbres; presenta las fichas del MINVU y el Anexo A de la NCh 433 | Discuten qué aporta el dron a cada ficha |
+| 195-225 | 6.8 Medir desde la imagen | Da una foto frontal con su GSD | Cuentan los píxeles de una fisura, calculan el ancho y su incertidumbre |
+| 225-240 | 6.9 Severidad y confianza | Presenta cinco casos | Cada uno califica en silencio; se comparan y se discuten las diferencias |
+| 240-360 | Taller | Circula, pide justificar cada causa con el patrón | Clasifican las 30 imágenes; puesta en común final |
+
+**Demostraciones para explicar la regla de la tracción:**
+
+- **Viga de espuma.** Fléxela apoyada en sus extremos: la cuadrícula se estira abajo y se acorta arriba. Las fisuras de flexión aparecen abajo, verticales, donde la espuma se estira.
+- **Tiza en torsión.** Gire una tiza con las dos manos hasta romperla: la fractura es helicoidal, igual que las fisuras de torsión en vigas de borde.
+- **Hoja de papel.** Tire de una hoja desde dos esquinas opuestas: se rasga en diagonal, perpendicular al tirón. Así se explican las fisuras de corte a 45° y las grietas en X de un muro sometido a sismo en ambos sentidos.
+
+**Cómo explicar los puntos clave:**
+
+- **Observación primero.** Exija que nadie diga una causa antes de describir qué es, dónde está y cómo es. Anote las tres respuestas en la pizarra y solo después pida la causa.
+- **Corrosión como secuencia.** Ordene en la pizarra cuatro fotos (mancha, fisura paralela a la barra, delaminación, armadura expuesta) y pida al grupo ordenarlas en el tiempo.
+- **Albañilería confinada.** Dibuje un paño con sus pilares y cadenas: una grieta en X que se queda en el paño es daño importante; si entra en los pilares, el confinamiento ya falló y es grave.
+- **Edificios de muros.** Use fotos de 2010: el daño se concentró en la base y en los bordes de los muros, con aplastamiento del hormigón y pandeo de las barras. Es lo primero que se mira en un edificio chileno de muros.
+- **Medir.** Ancho = píxeles × GSD, con ±1 píxel. Si salen 2 píxeles, el ancho no se reporta como medido: "menor de 3 × GSD, medir en sitio".
+- **Severidad y confianza son independientes.** Un daño puede ser grave y estar poco confirmado (3 B): eso no se baja de severidad, se manda a verificar pronto.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "Si la fisura es vertical en el centro de la luz de una viga, ¿dónde estaba la tracción?" Horizontal, en la cara inferior: flexión.
+- "¿Por qué la corrosión agrieta el hormigón?" Porque el óxido ocupa más volumen que el acero y revienta el recubrimiento.
+- "¿Qué sube la severidad de un enchape suelto?" Que esté sobre una vereda o un acceso.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Saltar a la causa sin describir: aplique la regla de observación primero en cada foto.
+- Inflar la severidad por prudencia: recuerde que la confianza es la herramienta para expresar la duda.
+- Anchos menores que el GSD reportados como medidos: corrija con el ejercicio de conteo de píxeles.
+- Diferencias grandes entre grupos en la misma imagen: úselas; la discusión calibra el criterio del grupo.
+
+**Verificación de cierre:** la planilla del taller (15 % de la nota) y una imagen final que cada participante clasifica solo, con la causa justificada por el patrón.

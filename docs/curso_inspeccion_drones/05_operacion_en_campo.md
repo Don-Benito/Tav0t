@@ -120,3 +120,61 @@ Si algo falla, se repite en el sitio: volver otro día cuesta movilización, aut
 2. ¿Por qué no se despega desde una losa con armadura expuesta?
 3. ¿Qué riesgo tiene el RTH configurado a 30 m cuando el dron está junto a un balcón del piso 5?
 4. Mencione cuatro verificaciones del control de calidad en sitio.
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** junto a una estructura el dron pierde sus ayudas (GNSS, brújula, sensores de obstáculos); lo que protege es la distancia, el observador y un equipo que se comunica con frases cortas y obedece el "Alto".
+
+**Preparación:**
+
+- Autorización de la DGAC vigente para el sitio de prácticas, permiso del propietario y área de seguridad diseñada.
+- Pronóstico de viento y lluvia del día; plan B en simulador si se supera el límite.
+- Teléfonos con una aplicación de GNSS y de brújula para las demostraciones.
+- Tarjetas de emergencia para el simulacro (una por situación de la tabla 5.5).
+- Listas de chequeo del anexo A impresas, radios, conos, cinta, chalecos y cascos.
+- Un computador portátil por grupo para el control de calidad.
+
+**Secuencia del módulo (360 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-15 | 5.1 Preparación del sitio | Recorre con el grupo un croquis del sitio de prácticas: obstáculos, despegue, alterno, área de seguridad con los 30 m de la DAN 151 | Marcan en el croquis cada elemento |
+| 15-30 | 5.2 Comunicación | Hace un simulacro de voz con las frases de la tabla | Practican las frases en ronda; repiten cada orden recibida |
+| 30-65 | 5.3 Fenómenos | Hace las demostraciones de GNSS junto a un muro y de brújula junto a acero; muestra un video de un sensor de obstáculos que no ve un cable | Leen en sus teléfonos la caída de satélites y el desvío de la brújula |
+| 65-75 | 5.4 RTH | Plantea el experimento mental del RTH junto al balcón | Deciden la configuración ante pérdida de enlace para cada fachada |
+| 75-90 | 5.5 Simulacro de emergencias | Saca tarjetas al azar en medio de una conversación | El grupo responde con la primera acción en menos de cinco segundos |
+| 90-150 | Práctica: simulador | Supervisa el vuelo manual en ATTI y la recuperación ante pérdida de GNSS | Vuelan por turnos pasadas paralelas a un muro virtual |
+| 150-180 | Práctica: chequeos y briefing | Exige las listas firmadas y escucha el briefing de cada grupo | Diligencian el anexo A y hacen el briefing |
+| 180-300 | Práctica: vuelo de fachada | Es el operador al mando; detiene la práctica ante cualquier desviación | Rotan roles: observador, operador de cámara, coordinador; hacen el ensayo de deriva, la cobertura y los detalles |
+| 300-330 | Práctica: cubierta | Dirige la malla nadir y la órbita | Rotan roles |
+| 330-360 | Control de calidad y cierre | Revisa con cada grupo las fotos al 100 % en el portátil | Completan la lista 5.7, hacen dos copias y la revisión del día |
+
+**Cómo explicar los puntos clave:**
+
+- **GNSS degradado.** Pida a todos que miren en el teléfono el número de satélites en el patio y luego pegados a un muro alto: la caída se ve en segundos. Explique que el dron sufre lo mismo, y que la deriva hacia la fachada es la consecuencia.
+- **Interferencia magnética.** Acerque un teléfono con la brújula abierta a una viga de acero o a una losa con armadura expuesta: la aguja se desvía. "Ahora imaginen que el dron cree que mira al norte y mira al este".
+- **Ensayo de deriva.** En el campo, muestre el ensayo una vez a 6 m de la fachada: suelte los mandos 10 segundos y que el grupo mida cuánto se movió. Esa medida decide si se acerca o no.
+- **RTH junto a voladizos.** Dibuje una fachada con balcones y el dron entre dos de ellos; pregunte qué pasa si pierde enlace y sube en vertical. La respuesta convence más que la regla.
+- **Revisar en el portátil.** Muestre una foto que se ve nítida en la pantalla del control y movida al 100 % en el portátil. Es la mejor forma de que nadie vuelva a saltarse el paso.
+
+**Reglas de seguridad de la práctica** (léalas en el briefing):
+
+- El instructor operador es el operador al mando y puede tomar el control en cualquier momento.
+- Nadie entra al área de seguridad sin autorización del coordinador.
+- Cualquier persona puede decir "Alto" y se obedece sin discutir.
+- Se suspende la práctica si el viento supera el límite del plan o si aparece una persona ajena dentro de los 30 m.
+- Una falta grave reprueba el componente práctico (ver Evaluación).
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Qué hace si el dron deriva hacia la fachada?" Se aleja hacia el espacio abierto, estabiliza y no se vuelve a acercar hasta que el ensayo de deriva sea aceptable.
+- "¿Dónde se calibra la brújula?" Lejos de la estructura, el acero y los vehículos, y solo si el sistema lo pide.
+- "¿Quién puede decir Alto?" Cualquier persona del equipo.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Exceso de confianza de quienes ya vuelan: asígneles primero el rol de observador; ver el vuelo desde afuera corrige la percepción de distancia.
+- Frases improvisadas en vuelo: deténgase y pida repetir con la frase estándar.
+- Prisa al final del día: el control de calidad es parte de la práctica y se evalúa.
+
+**Verificación de cierre:** cada grupo entrega las listas firmadas, la bitácora y las fotos aceptadas en el control de calidad; en la revisión del día cada uno dice una cosa que cambiaría.

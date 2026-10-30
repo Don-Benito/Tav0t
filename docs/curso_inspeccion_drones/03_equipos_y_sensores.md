@@ -104,3 +104,47 @@ Con los equipos del curso: identificar en la ficha técnica los datos de la tabl
 2. Una cámara anuncia "24 mm equivalente". ¿Sirve ese dato para calcular el GSD? ¿Qué dato necesita?
 3. ¿Qué ventaja de seguridad tiene una cámara con zoom óptico?
 4. ¿Por qué hay que verificar la precisión del RTK cerca de una fachada alta?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** el equipo se elige por la pregunta de la inspección y dentro de los límites de la DAN 151; de la ficha técnica solo importan unos pocos datos, y hay que saber leerlos.
+
+**Preparación:**
+
+- Los drones del curso (o fotos de un multirrotor, uno con jaula y un ala fija) y el módulo de paracaídas.
+- La ficha técnica impresa de la cámara del curso, con la focal real y la equivalente.
+- La cámara térmica encendida y un teléfono con una aplicación que muestre los satélites GNSS.
+- Un ventilador pequeño para la demostración del obturador.
+
+**Secuencia de la clase (120 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-10 | Apertura | Pone sobre la mesa tres equipos (o sus fotos) y pregunta cuál usarían para una fachada, el interior de un estanque y un canal de 5 km | Eligen y justifican |
+| 10-35 | 3.1 Aeronaves | Explica los tipos y muestra el paracaídas; relaciona la masa de 9 kg y el paracaídas con la DAN 151 | Revisan el equipo y su placa de registro |
+| 35-60 | 3.2 Cámaras | Proyecta la ficha técnica; hace la demostración del obturador y la del zoom digital | Subrayan sensor, focal real y píxeles; calculan un GSD con cada focal |
+| 60-70 | 3.3 Térmica | Muestra el salón en la térmica: personas, una ventana y un objeto metálico | Anotan lo que les sorprende |
+| 70-85 | 3.4 GNSS, RTK y PPK | Compara en la aplicación los satélites junto a un muro y en un patio abierto | Leen la cantidad de satélites y la precisión |
+| 85-90 | 3.5 y 3.6 | Repasa LiDAR, accesorios y mantenimiento | Preguntan |
+| 90-120 | Práctica | Supervisa la configuración | Configuran RAW + JPEG, obturador y guardado radiométrico; revisan baterías y hélices |
+
+**Cómo explicar los puntos clave:**
+
+- **Focal real frente a equivalente.** Pida que calculen el GSD de la cámara del curso con 8.8 mm (real) y con 24 mm (equivalente). La segunda cifra da un GSD casi tres veces más fino: así descubren solos por qué la equivalente no sirve.
+- **Obturador por líneas.** Fotografíe con un teléfono el ventilador encendido: las aspas salen curvas. Explique que el sensor se lee por líneas y que, si la aeronave se mueve, la fachada se deforma igual que las aspas.
+- **Zoom óptico frente a digital.** Muestre la misma fisura con zoom óptico y con un recorte de la foto gran angular ampliado: en el recorte no aparece información nueva, solo píxeles más grandes.
+- **RTK fijo frente a flotante.** Analogía: la solución fija es como medir con la huincha bien estirada; la flotante, con la huincha suelta. Junto a un muro alto la huincha se suelta sin avisar; por eso se chequea con puntos independientes.
+- **Altura y densidad.** Si el curso se dicta en una faena de cordillera, muestre que la autonomía real es menor que la de la ficha (aire un 26 % menos denso a 3000 m).
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Qué tres datos de la ficha necesito para planear?" Ancho del sensor, focal real y resolución en píxeles.
+- "¿Por qué la térmica debe ser radiométrica?" Para corregir la emisividad y medir diferencias de temperatura después del vuelo.
+- "¿Qué exige la DAN 151 a la aeronave?" Hasta 9 kg, paracaídas de emergencia y registro en la DGAC.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Fascinación por los equipos más caros: vuelva a la pregunta de la inspección; un equipo sobredimensionado también suma riesgo y requisitos.
+- Confusión entre GSD y resolución en megapíxeles: aclare que dos cámaras de 20 MP pueden dar GSD muy distintos según el sensor y la focal.
+
+**Verificación de cierre:** cada participante entrega la ficha de la cámara del caso conductor con los tres datos subrayados y el GSD a 6 m calculado a mano.

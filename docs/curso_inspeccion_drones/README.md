@@ -104,9 +104,40 @@ En modalidad de 10 sesiones de 4 horas se usa la misma secuencia, una columna po
 
 ## Cómo usar este manual
 
-Cada módulo sigue la misma estructura: duración y competencias, objetivos de aprendizaje, contenido, práctica o taller, errores frecuentes y autoevaluación. Las respuestas de las autoevaluaciones, el banco de preguntas del examen y la rúbrica del proyecto final están en el anexo C. Las listas de chequeo (anexo A) y los formatos (anexo B) se imprimen y se usan en campo.
+Cada módulo sigue la misma estructura: duración y competencias, objetivos de aprendizaje, contenido, práctica o taller, errores frecuentes, autoevaluación y una guía del instructor que explica cómo dictarlo. Las respuestas de las autoevaluaciones, el banco de preguntas del examen y la rúbrica del proyecto final están en el anexo C. Las listas de chequeo (anexo A) y los formatos (anexo B) se imprimen y se usan en campo.
 
 La normativa aeronáutica y los equipos cambian más rápido que la ingeniería. Antes de cada cohorte, el coordinador revisa la tabla de datos por verificar del módulo 2 y actualiza este manual: los valores de norma son datos del curso y no se dan por sentados.
+
+## Guía general para el instructor
+
+El manual sirve al participante y al instructor. Cada módulo termina con una guía "Cómo explicar este módulo" con la secuencia de la clase, los tiempos, las demostraciones, la forma de explicar cada punto difícil, las preguntas para el grupo y las dificultades típicas.
+
+**Equipo docente:**
+
+- Un ingeniero civil con experiencia en inspección y evaluación de estructuras (módulos 1, 6, 9 y 10).
+- Un operador RPAS con credencial vigente de la DGAC, que es el operador al mando en todas las prácticas (módulos 2, 3 y 5).
+- Un especialista en fotogrametría o topografía (módulos 4, 8 y 9). Una misma persona puede cubrir dos perfiles.
+
+**Preparación de cada cohorte (dos a cuatro semanas antes):**
+
+- [ ] Revisar la tabla 2.5 contra los textos oficiales y actualizar el manual
+- [ ] Elegir el caso conductor y conseguir la autorización del propietario o del condominio
+- [ ] Solicitar la autorización de la DGAC para el sitio de prácticas y verificar el seguro
+- [ ] Revisar los equipos: registro, paracaídas, baterías, cámaras, térmica, GNSS RTK o estación total
+- [ ] Armar el banco de imágenes del módulo 6: al menos 60 fotos de daños reales, con permiso de uso y sin personas identificables
+- [ ] Instalar el software en los computadores y probar el laboratorio del módulo 9
+- [ ] Preparar el plan B para lluvia o viento: simulador y procesamiento con los datos del curso
+
+**Principios para enseñar este curso:**
+
+1. **Mostrar antes de explicar.** Cada concepto empieza con una imagen, un objeto o una demostración; la teoría llega para explicar lo que el grupo ya vio.
+2. **Preguntar antes de responder.** Deje que el grupo proponga una causa o un cálculo antes de dar la respuesta: un error dicho en voz alta enseña a todos.
+3. **Un caso de principio a fin.** Cada módulo usa el caso conductor; al cierre, recuerde qué entregable deja el módulo para el siguiente.
+4. **Grupos mixtos.** Junte en cada grupo a quienes vienen del vuelo con quienes vienen de la ingeniería: se enseñan entre ellos lo que al otro le falta.
+5. **La seguridad no se negocia.** En las prácticas, el operador al mando tiene la última palabra y cualquier persona puede decir "Alto".
+6. **Cerrar verificando.** Cada módulo termina con una verificación breve antes de pasar al siguiente.
+
+**Cómo leer las guías de cada módulo.** La tabla de secuencia suma la duración del módulo; los tiempos son una referencia y se ajustan al grupo. Las respuestas esperadas de las preguntas para la clase están en la misma guía; las de la autoevaluación, en el anexo C.
 
 ## Archivos del curso
 
@@ -126,4 +157,6 @@ La normativa aeronáutica y los equipos cambian más rápido que la ingeniería.
 | [anexos/B_formatos.md](anexos/B_formatos.md) | Anexo B. Formatos |
 | [anexos/C_evaluacion.md](anexos/C_evaluacion.md) | Anexo C. Evaluación |
 | [glosario_y_referencias.md](glosario_y_referencias.md) | Glosario y referencias normativas |
+| [pdf/manual_curso_inspeccion_drones.pdf](pdf/manual_curso_inspeccion_drones.pdf) | Manual completo en PDF, con la guía del instructor de cada módulo |
+| [pdf/folleto_curso_inspeccion_drones.pdf](pdf/folleto_curso_inspeccion_drones.pdf) | Folleto tríptico en PDF, tamaño carta |
 | [../../ejemplos/curso_drones/](../../ejemplos/curso_drones/) | Calculadora de misión y laboratorio (edificio en Santiago, SIRGAS-Chile, UTM 19S) |

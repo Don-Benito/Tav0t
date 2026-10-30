@@ -135,3 +135,43 @@ Cada grupo de 3 o 4 participantes inspecciona el caso conductor y entrega:
 | Informe y comunicación | 20 % | Observación separada de interpretación, limitaciones al principio, recomendaciones con plazo, presentación clara | Estructura completa con fallas de redacción | Álbum de fotos sin conclusión o sin limitaciones |
 
 Nota del proyecto = suma de peso × nivel alcanzado en cada criterio. El proyecto vale el 40 % de la nota del curso.
+
+## Cómo conducir el proyecto final (guía del instructor)
+
+**Idea central:** el proyecto final demuestra que el grupo puede recorrer solo el flujo completo, del plan al informe; la evaluación mira el criterio, no la cantidad de fotos.
+
+**Antes del día 5:**
+
+- Entregue el enunciado y la rúbrica el día 3, junto con la lista de entregables y la hora límite (una carpeta compartida por grupo, 30 minutos antes de la jornada).
+- Pida que la presentación siga este orden: pregunta del encargo, método, hallazgos principales, prioridad con D/C y deriva, recomendaciones y limitaciones.
+- Forme el jurado con dos o tres personas: el ingeniero civil del curso, el operador RPAS y, si es posible, alguien externo (un inspector o un administrador de condominio, que es quien lee estos informes).
+- Reúna las observaciones de seguridad de las prácticas de cada grupo: alimentan el primer criterio de la rúbrica.
+
+**Secuencia de la jornada (240 min, para seis grupos):**
+
+| Min | Bloque | Qué se hace |
+| --- | --- | --- |
+| 0-45 | Examen escrito | 15 preguntas del banco y 2 abiertas (15 % de la nota) |
+| 45-195 | Presentaciones | 15 minutos por grupo y 10 de preguntas del jurado |
+| 195-210 | Pausa y deliberación | Cada jurado califica solo con la rúbrica; luego comparan |
+| 210-235 | Retroalimentación | Un punto fuerte y una mejora por grupo; cierre general del curso |
+| 235-240 | Cierre | Encuesta de satisfacción y entrega de constancias |
+
+Con más grupos, reduzca las preguntas a 5 minutos o divida el jurado en dos salas con la misma rúbrica.
+
+**Preguntas sugeridas para el jurado:**
+
+- "¿Qué no pudieron ver y cómo lo resolverían?"
+- "¿Por qué este hallazgo es severidad 3 y no 2? ¿Qué confianza tiene y qué verificación piden?"
+- "¿Cuánto dio el RMS en los puntos de chequeo y qué significa para sus mediciones?"
+- "¿Qué cambiarían del plan de vuelo si volvieran mañana?"
+- "¿Qué norma de la DGAC rigió su operación y qué autorizaciones necesitaron?"
+
+**Uso de la rúbrica:**
+
+- Cada jurado califica cada criterio por separado en uno de los niveles (100 %, 75 % o 40 %) y anota una frase que lo justifique.
+- Si dos jurados difieren en más de un nivel en un criterio, lo discuten antes de promediar.
+- La nota del proyecto es la suma de peso por nivel; luego se combina con los demás componentes (anexo C y sección Evaluación).
+- Una falta grave de seguridad en las prácticas reprueba el componente práctico aunque el informe sea excelente.
+
+**Retroalimentación:** sea concreto y use el lenguaje de la rúbrica ("el hallazgo H01 está bien descrito, pero el ancho de 0.3 mm está bajo el GSD y no se puede informar como medido"). Cierre recordando los tres mensajes del curso: el dron detecta, prioriza y documenta; la seguridad no se negocia; el informe dice lo que se vio y lo que falta verificar.

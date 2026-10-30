@@ -165,3 +165,53 @@ Para el caso conductor:
 3. ¿Cuántas fotos necesita una fachada de 12 × 10 m con la gran angular a 6 m y solapes de 80/70?
 4. ¿Por qué no se cubre una fachada completa con el zoom?
 5. Con GSD de 0.4 mm/px y 1/1000 s, ¿a qué velocidad máxima puede moverse el dron para que el desplazamiento sea menor de 0.5 px?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** la cadena del plan es siempre la misma: detalle más pequeño → GSD → distancia → huella → malla de fotos → tiempo y baterías. Si la distancia resulta insegura, se cambia de cámara, no de distancia.
+
+**Preparación:**
+
+- Una tarjeta comparadora de fisuras (fisurómetro) y cinta para pegarla en un muro del salón o del patio.
+- Hojas de papel tamaño carta para la demostración de solapes.
+- Un computador con la calculadora del curso (`calculadora_mision.py`) proyectado.
+- Fotos de una misma fisura a 1.64 mm/px y a 0.4 mm/px.
+- Una carta solar de Santiago (o una aplicación de trayectoria solar) y la orientación de las fachadas del caso conductor.
+- Plantilla del plan de misión (anexo B) impresa por grupo.
+
+**Secuencia de la clase (240 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-15 | Apertura | Muestra la misma fisura a dos GSD y pregunta qué se puede afirmar con cada foto | Describen lo que ven y lo que no |
+| 15-45 | 4.1 Detectar y medir | Pega el fisurómetro en el muro | Fotografían con el teléfono a 1, 3 y 6 m y anotan desde qué distancia dejan de distinguir cada línea |
+| 45-75 | 4.2 Fórmulas | Deduce el GSD en la pizarra con triángulos semejantes y hace la demostración de solapes con hojas | Repiten la deducción y calculan un caso |
+| 75-90 | 4.3 Ejemplos resueltos | Resuelve los ejemplos 1 a 4 en vivo con la calculadora | Comprueban a mano cada resultado |
+| 90-100 | Pausa |  |  |
+| 100-115 | 4.4 y 4.5 Patrones, luz y viento | Muestra en la carta solar por qué la fachada norte recibe sol todo el año y la sur casi nunca; dibuja el viento en una esquina | Asignan horario a cada fachada del caso conductor |
+| 115-120 | 4.6 y 4.7 Tiempo, baterías y plan | Presenta la plantilla del plan | Leen los campos |
+| 120-240 | Taller | Revisa a los 30, 60 y 90 minutos el avance de cada grupo | Completan el plan de misión del caso conductor |
+
+**Cómo explicar los puntos clave:**
+
+- **De dónde sale el GSD.** Dibuje dos triángulos que comparten el vértice en el lente: el chico tiene de base el ancho del sensor y de altura la focal; el grande, la huella en la fachada y la distancia. Por semejanza, huella = sensor × distancia / focal. Dividiendo la huella por los píxeles del ancho de la imagen sale el GSD. Con esa imagen nadie olvida la fórmula.
+- **Detectar no es medir.** El fisurómetro lo demuestra: a cierta distancia la línea se sigue viendo, pero ya no se puede decir su ancho. Esa es la regla de los 3 píxeles.
+- **Solapes.** Superponga dos hojas carta de modo que compartan el 80 % del ancho: el grupo ve que la segunda foto avanza solo un quinto de la huella. Repita con el 70 % en sentido vertical para las pasadas.
+- **El +1 en el número de fotos.** Para cubrir 30 m con un paso de 1.80 m, los centros van en 0, 1.8, 3.6… hasta pasar los 30 m: son ⌈30 / 1.8⌉ + 1 = 18 posiciones. Cuéntelas en la pizarra con un ejemplo corto (6 m con paso de 2 m: 0, 2, 4 y 6, cuatro fotos).
+- **Nitidez.** Pida que imaginen la aeronave avanzando 1 m/s: en 1/500 s recorre 2 mm, más que un píxel de 1.64 mm. Por eso el detalle se fotografía en estacionario.
+- **Luz en Chile.** En Santiago (33.4° S) el sol siempre pasa por el norte: la fachada norte tiene sol todo el día y la sur queda en sombra; el contraluz se evita eligiendo la hora según la orientación.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "Si quiero el doble de detalle, ¿a qué distancia vuelo?" A la mitad, o con el doble de focal.
+- "¿Qué pasa con el número de fotos si me acerco a la mitad?" Se multiplica por cerca de cuatro, porque la huella se reduce a la mitad en ancho y en alto.
+- "¿Cuándo vuelo la fachada sur?" Con cielo nublado o en las horas en que no hay contraluz; casi siempre estará en sombra.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Errores de unidades (mm y m mezclados): pida que escriban las unidades en cada paso y que comprueben el resultado con la huella dividida por los píxeles.
+- Usar la focal equivalente: recuérdeles la demostración del módulo 3.
+- Confundir solape frontal y lateral: haga que dibujen dos fotos de una misma pasada y dos de pasadas vecinas.
+- Planes sin margen de batería: pida el número de vuelos y de baterías con la regla de aterrizar con 25-30 %.
+
+**Verificación de cierre:** el plan de cada grupo se revisa con la calculadora (GSD, distancia y número de fotos) y con la rúbrica del plan de misión; vale el 20 % de la nota.

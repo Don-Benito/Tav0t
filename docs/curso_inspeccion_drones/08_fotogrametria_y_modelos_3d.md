@@ -95,3 +95,50 @@ Con las fotos del vuelo de fachada del módulo 5 (o el conjunto del curso):
 2. ¿Qué pasa con la exactitud de la parte alta de una fachada si todos los GCP están en el suelo?
 3. Si el GSD es 1.64 mm/px, ¿qué exactitud relativa puede esperar?
 4. ¿Qué condición hace válida la comparación de dos modelos de fechas distintas?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** el modelo 3D vale lo que dicen sus puntos de chequeo; una buena captura (solape, convergencia, nitidez) y una red de control bien distribuida dan una exactitud del orden de 1 a 3 veces el GSD.
+
+**Preparación:**
+
+- El programa de fotogrametría instalado en todos los computadores, con un proyecto pequeño de prueba ya procesado por si el tiempo no alcanza.
+- Dos conjuntos de fotos de una misma fachada: uno solo con fotos paralelas y otro con fotos convergentes en las esquinas.
+- Coordenadas de los puntos de control y de chequeo del vuelo del módulo 5, en SIRGAS-Chile, con su huso, su época y su tipo de altura.
+- Un informe de procesamiento real impreso.
+- CloudCompare con dos nubes de fechas distintas para mostrar la comparación M3C2.
+
+**Secuencia del módulo (300 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-15 | Apertura | Muestra el modelo 3D de una fachada y lo gira; pregunta cómo se obtiene profundidad a partir de fotos planas | Proponen explicaciones |
+| 15-45 | 8.1 De las fotos al modelo | Explica la visión con dos ojos; toma tres fotos de un objeto del salón desde posiciones distintas y muestra los puntos homólogos | Hacen el ejercicio de un ojo y dos ojos |
+| 45-75 | 8.2 Requisitos de captura | Procesa en vivo los dos conjuntos (paralelo y convergente) o muestra sus resultados | Comparan la nube de cada conjunto en las esquinas |
+| 75-105 | 8.3 Puntos de control y de chequeo | Dibuja una fachada alta con todos los GCP en el suelo y explica el efecto de palanca | Proponen una red mejor distribuida para el caso conductor |
+| 105-120 | Pausa |  |  |
+| 120-135 | 8.4 Control de calidad | Recorre el informe impreso | Encuentran el RMS en GCP y el RMS en chequeo y dicen cuál se reporta |
+| 135-150 | 8.5 y 8.6 Productos y software | Muestra un ortomosaico de fachada y la comparación M3C2 | Preguntan |
+| 150-300 | Práctica | Asiste el procesamiento; revisa que los chequeos queden fuera del ajuste | Alinean, marcan GCP, generan nube y ortomosaico, llenan la tabla 8.4 y miden en el ortomosaico |
+
+**Cómo explicar los puntos clave:**
+
+- **SfM con los ojos.** Pida que extiendan un brazo con el pulgar arriba y lo miren cerrando un ojo y después el otro: el pulgar "salta" contra el fondo. Ese salto (paralaje) es lo que el programa mide entre fotos para calcular la profundidad; por eso hace falta solape y fotos desde posiciones distintas.
+- **Fotos convergentes.** Con solo fotos paralelas el programa ve la fachada como con un ojo: la profundidad y la calibración quedan mal resueltas. Las fotos oblicuas en esquinas son el "segundo ojo".
+- **Puntos de chequeo.** Analogía del examen: si el examen trae las mismas preguntas que la guía de estudio, la nota no dice cuánto se aprendió. Los GCP son la guía; los puntos de chequeo, el examen.
+- **Distribución en altura.** Dibuje un edificio de 24 m con los GCP solo en el suelo: un error pequeño de inclinación abajo se convierte en un error mayor arriba, como una palanca. Por eso hay puntos en distintas alturas, medidos con estación total sin prisma.
+- **Exactitud esperada.** Con GSD de 1.64 mm/px, el modelo debería dar del orden de 1.6 a 4.9 mm en los chequeos. Si da mucho más, el grupo debe buscar la causa antes de usar el modelo.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Qué RMS se informa?" El de los puntos de chequeo.
+- "¿Por qué se procesan aparte las fotos con zoom?" Porque cambian la focal y la calibración dentro del bloque.
+- "¿Qué se necesita para comparar dos modelos de fechas distintas?" El mismo marco (la misma red de control), exactitud conocida y cambios mayores que la incertidumbre.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Procesos lentos que consumen la práctica: trabaje con un subconjunto de fotos y tenga listo el proyecto de respaldo.
+- Mezcla de alturas elipsoidales y ortométricas: pida que escriban el tipo de altura junto a cada coordenada antes de importarlas.
+- Puntos de chequeo usados como control por error: revíselo en la pantalla de cada grupo antes del ajuste.
+
+**Verificación de cierre:** cada grupo entrega la tabla 8.4 completa, el ortomosaico de fachada y una medición de área y de longitud con su incertidumbre.

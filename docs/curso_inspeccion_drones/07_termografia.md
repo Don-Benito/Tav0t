@@ -93,3 +93,48 @@ No hay norma chilena específica de termografía de edificaciones; como referenc
 2. ¿En qué momento del día se busca el desprendimiento de enchapes en una fachada oriental, y cómo se ve?
 3. ¿Qué tamaño mínimo debe tener una anomalía para medirla con la cámara del curso a 5 m?
 4. ¿Cómo distingue un reflejo de una anomalía real?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** la cámara térmica mide radiación, no temperatura; un defecto solo aparece cuando hay flujo de calor, y lo que se reporta es una diferencia de temperatura respaldada por la foto visible.
+
+**Preparación:**
+
+- La cámara térmica radiométrica, cargada, con el software de análisis instalado.
+- Dos tazas iguales con agua caliente: una cubierta con cinta aislante negra (alta emisividad) y otra con papel aluminio liso (baja emisividad).
+- Papel aluminio arrugado y un cartón para medir la temperatura reflejada.
+- Termogramas de ejemplo: enchape desprendido en la mañana y en la noche, humedad bajo una ventana, reflejo en un vidrio.
+- Un muro con enchape al sol y otro a la sombra, cerca del salón, para la práctica.
+
+**Secuencia del módulo (180 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-15 | Apertura | Apoya la mano en un muro diez segundos y muestra la huella en la térmica; luego apunta a una ventana y muestra su propio reflejo | Explican qué están viendo |
+| 15-45 | 7.1 Qué mide la cámara | Hace la demostración de las dos tazas | Leen las dos temperaturas y explican la diferencia |
+| 45-80 | 7.2 Contraste térmico | Dibuja la curva de temperatura de un enchape adherido y de uno suelto a lo largo del día | Marcan en la curva las mejores horas para volar |
+| 80-95 | 7.3 Condiciones a evitar | Muestra el reflejo en el vidrio y se mueve frente a él | Comprueban que la mancha se mueve con la cámara |
+| 95-120 | 7.4 y 7.5 Configuración y reporte | Muestra la misma fachada con rango automático y con rango fijo; corrige la emisividad en el software | Reportan un ΔT con su foto visible |
+| 120-180 | Práctica | Supervisa las mediciones | Miden la temperatura reflejada, comparan el muro al sol y a la sombra, marcan una zona para percusión |
+
+**Cómo explicar los puntos clave:**
+
+- **Emisividad.** Las dos tazas tienen el agua a la misma temperatura, pero la de aluminio parece mucho más fría: refleja el salón en vez de emitir su propio calor. Es la mejor forma de que el grupo no vuelva a confiar en un metal brillante.
+- **Sin flujo no hay imagen.** Use la analogía del agua: el calor fluye como el agua y un vacío de aire bajo un enchape es como una piedra en el río; solo se nota si el agua corre. A mediodía con la fachada en sombra el río está quieto.
+- **Mañana y noche.** Sobre la curva diaria muestre que el enchape suelto se calienta antes y más rápido en la mañana (zona caliente) y se enfría antes en la noche (zona fría). En el valle central la gran amplitud térmica diaria ayuda; elija la hora según la orientación de la fachada.
+- **Reflejos.** Muévase frente a una ventana: si la mancha se mueve con usted, es un reflejo.
+- **Reportar ΔT.** Explique que la temperatura absoluta depende de la emisividad y de la temperatura reflejada; la diferencia entre la zona anómala y la sana vecina es mucho más robusta.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Por qué la taza de aluminio parece fría?" Porque su emisividad es baja y la cámara ve sobre todo el reflejo del entorno.
+- "¿A qué hora se busca un enchape suelto en una fachada oriente?" En la mañana, mientras el sol la calienta; se ve más caliente.
+- "¿Basta la térmica para decir que un enchape está suelto?" No: se confirma con percusión en sitio.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Leer los colores como temperaturas: fije el rango antes de comparar y pida siempre la escala en el termograma.
+- Tomar reflejos y sombras por defectos: exija dos vistas desde posiciones distintas para cada anomalía.
+- Esperar ver fisuras en la térmica: recuerde el GSD térmico (9.2 mm/px a 10 m) y la regla de 3 × 3 píxeles.
+
+**Verificación de cierre:** cada grupo entrega un termograma con su foto visible, la emisividad y la temperatura reflejada usadas, el ΔT y la confianza asignada.

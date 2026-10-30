@@ -148,3 +148,57 @@ Después de volar: bitácora de vuelo, reporte de incidentes (los que la DAN 151
 2. Mencione cuatro documentos que deben existir antes del vuelo.
 3. Un peligro tiene P = 4 y S = 4. ¿Se puede volar? ¿Qué haría?
 4. ¿Qué medidas toma para no vulnerar la intimidad de los residentes, y qué ley la protege?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** antes de despegar, cada inspección tiene que responder tres preguntas: ¿qué norma de la DGAC la rige?, ¿quién autoriza el lugar? y ¿qué riesgo residual aceptamos?
+
+**Preparación:**
+
+- Descargar de la DGAC el texto vigente de la DAN 151 y de la DAN 91, y revisar si la Edición 4 ya se aprobó. Confirmar en el texto las cifras marcadas "verificar" en la sección 2.1 y corregir el manual si cambiaron.
+- Revisar en LeyChile (BCN) el estado de la Ley 21.719 y de su posible postergación.
+- Llevar ejemplos anónimos de credencial de operador, tarjeta de registro, solicitud de autorización y póliza.
+- Una batería LiPo hinchada (o su foto) y una bolsa ignífuga.
+- Cuatro tarjetas de escenario y una plantilla de matriz de riesgos impresa por grupo.
+
+**Secuencia de la clase (240 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-15 | Apertura | Relata un incidente: un dron cae sobre una vereda durante una inspección. Pregunta quién responde y qué papeles le pedirán | Proponen responsables y documentos |
+| 15-60 | 2.1 DGAC | Proyecta la DAN 151 y la recorre con el grupo; dibuja el árbol de decisión (área poblada → DAN 151; comercial → AOC; sin fines de lucro → CEO) | Buscan en el texto oficial cada requisito de la tabla |
+| 60-75 | Escenarios | Reparte las cuatro tarjetas | En grupos deciden norma, certificado y autorizaciones |
+| 75-90 | Pausa |  |  |
+| 90-135 | 2.2 Otras obligaciones | Explica condominio, permiso municipal, datos personales y seguridad laboral con una foto de fachada con personas en las ventanas y la demostración de la batería | Marcan en la foto qué se debe difuminar; repasan el manejo de baterías |
+| 135-165 | 2.2 Normativa de ingeniería | Muestra el mapa de normas: NCh 433 y su Anexo A, NCh 430, NCh 2123, fichas del MINVU; indica qué parte del informe alimenta cada una | Toman nota del mapa |
+| 165-180 | 2.3 Método de riesgo | Completa con el grupo la primera fila de la matriz de ejemplo | Califican P y S en voz alta y discuten |
+| 180-225 | Taller | Circula entre los grupos y cuestiona las calificaciones | Construyen la matriz del caso conductor |
+| 225-240 | Puesta en común y cierre | Pide a cada grupo su mayor riesgo residual y por qué lo acepta | Presentan y responden la autoevaluación |
+
+**Tarjetas de escenario (con respuesta):**
+
+1. Una empresa inspecciona la fachada de un condominio en Providencia: DAN 151, AOC con seguro aprobado por la JAC, autorización de la DGAC, autorización de la administración del condominio y permiso municipal si se cierra la vereda.
+2. La misma empresa inspecciona una torre de transmisión en un campo sin población: DAN 91, con los requisitos que esa norma fije para la operación.
+3. Una municipalidad inspecciona con su propio equipo un puente urbano: DAN 151 y CEO, porque es una operación sin fines de lucro de un organismo del Estado.
+4. Un estudiante quiere fotografiar un edificio para su memoria: si es sobre un área poblada, DAN 151; necesita credencial, registro y autorización aunque no cobre.
+
+**Cómo explicar los puntos clave:**
+
+- **Credencial, registro, certificado y autorización son cosas distintas.** Use la analogía del transporte: la credencial es la licencia del conductor, el registro es la patente del vehículo, el AOC o CEO es el permiso de la empresa y la autorización es el permiso para ese viaje. Falta uno y no se sale.
+- **Los 30 m de personas ajenas.** Dibuje la fachada, la vereda y el radio de 30 m: el grupo ve de inmediato por qué hay que cerrar la vereda y coordinar con los ocupantes.
+- **Probabilidad por severidad.** Insista en que una mitigación baja la probabilidad (cerrar la vereda hace menos probable que haya alguien debajo) o la severidad (el paracaídas reduce el daño si cae). Pida que cada mitigación diga cuál de las dos baja.
+- **La intimidad.** Pregunte: "si en una foto se ve a una persona dentro de su departamento, ¿quién responde?". Responde el responsable del tratamiento de los datos; por eso se define en el contrato.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Basta la credencial para cobrar por una inspección?" No: falta el AOC con seguro y la autorización de la DGAC.
+- "¿Quién autoriza el lugar en un condominio?" La administración, según la Ley 21.442 y el reglamento de copropiedad.
+- "¿Qué riesgo residual se acepta?" Verde, o amarillo con aprobación del operador al mando y del coordinador; nunca rojo.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Confundir la DAN 91 con la DAN 151: vuelva siempre a la pregunta "¿hay población debajo o cerca?".
+- Matrices genéricas ("caída del dron", sin lugar ni causa): exija que cada peligro nombre el lugar, el momento y la consecuencia.
+- Calificar todo como severidad 5 o probabilidad 1: pida que justifiquen la cifra con un caso conocido.
+
+**Verificación de cierre:** cada grupo entrega su matriz con el riesgo residual en verde o amarillo; la matriz pasa al plan de misión del módulo 4.

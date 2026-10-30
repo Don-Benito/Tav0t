@@ -101,3 +101,49 @@ Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la 
 2. Cite dos daños que un dron puede detectar bien y dos que no puede confirmar sin contacto o ensayo.
 3. ¿Por qué el piloto no debe ser el operador de cámara cuando se vuela cerca de una fachada?
 4. ¿Qué información del modelo estructural conviene revisar antes de planear el vuelo y por qué?
+
+## Cómo explicar este módulo (guía del instructor)
+
+**Idea central que el grupo debe llevarse:** el dron es la cámara del inspector, no el inspector; toda inspección empieza con una pregunta y termina en una decisión.
+
+**Preparación:**
+
+- Dos juegos de fotos de una misma fachada: uno tomado sin plan (fotos sueltas, encuadres variados) y otro de una inspección planificada (cobertura sistemática con detalles).
+- Cinco tarjetas de encargo para el ejercicio de tipos de inspección (ver secuencia).
+- Pizarra o papelógrafo para dibujar el flujo de la sección 1.4.
+- El simulador de vuelo o un control de dron apagado para la dinámica de roles.
+
+**Secuencia de la clase (120 min):**
+
+| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| --- | --- | --- | --- |
+| 0-10 | Apertura | Muestra los dos juegos de fotos y pregunta: "¿qué decisión puede tomar el administrador con cada uno?" | Comparan y responden en voz alta |
+| 10-30 | 1.1 Tipos de inspección | Reparte las tarjetas de encargo y pide clasificar cada una y escribir su pregunta | En parejas clasifican y formulan la pregunta; se ponen en común |
+| 30-55 | 1.2 Qué aporta y qué no | Construye con el grupo una tabla de dos columnas; luego la contrasta con la tabla del manual | Proponen ejemplos para cada columna |
+| 55-65 | Pausa |  |  |
+| 65-90 | 1.3 y 1.4 Estructuras y flujo | Dibuja el flujo paso a paso; se detiene en el control de calidad en sitio | Copian el flujo y lo aplican al caso conductor |
+| 90-110 | 1.5 Roles | Dirige la dinámica de atención dividida | Un participante "vuela" mientras otro le pide encuadres; luego se separan los roles |
+| 110-120 | Cierre | Presenta el caso conductor y su pregunta | Responden la autoevaluación en parejas |
+
+**Tarjetas de encargo sugeridas:** (1) un condominio en Ñuñoa pide revisar la fachada antes de pintarla, inspección inicial; (2) el mismo condominio repite la revisión al año siguiente, rutinaria; (3) aparecen fisuras en vigas tras una remodelación, especial; (4) un sismo de magnitud 7 afecta la ciudad, posevento; (5) una constructora quiere verificar el revestimiento de una torre nueva, de recibo.
+
+**Cómo explicar los puntos clave:**
+
+- **"Toda inspección parte de una pregunta".** Use la analogía del examen médico: nadie pide "todos los exámenes"; el médico pide los que responden a su sospecha. La pregunta decide qué se fotografía, con qué resolución y qué se entrega.
+- **"El dron detecta, prioriza y documenta".** Muestre una foto de un enchape que se ve sano y cuéntele al grupo que a la percusión sonaba hueco. Pregunte: "¿podría el dron haberlo confirmado?". Respuesta: no; podría sospecharlo con termografía, pero la confirmación es en sitio.
+- **El control de calidad como única vuelta atrás barata.** Haga la cuenta con el grupo: volver otro día significa nueva movilización, quizá una nueva autorización de la DGAC y esperar el clima. Revisar en el portátil cuesta 20 minutos.
+- **Atención dividida.** Durante la dinámica, quien "vuela" pierde la noción de la distancia en cuanto empieza a mirar el encuadre. Esa experiencia explica mejor que cualquier norma por qué se separan los roles.
+
+**Preguntas para la clase (con respuesta esperada):**
+
+- "¿Qué diferencia hay entre una inspección rutinaria y una especial?" La rutinaria compara con la vez anterior; la especial busca la causa y la gravedad de un daño concreto.
+- "¿Por qué miramos el modelo estructural antes de volar?" Porque indica los elementos más exigidos, que deben ir a la lista de detalle.
+- "¿Qué no puede hacer el dron?" Tocar, percutir, ensayar ni juzgar la capacidad del elemento.
+
+**Dificultades frecuentes y cómo abordarlas:**
+
+- Quienes vienen del vuelo quieren pasar rápido a volar: asígneles en la dinámica el rol de operador de cámara para que vivan la otra mitad del trabajo.
+- Los ingenieros subestiman la operación aérea: pídales estimar el tiempo de una inspección completa y luego muéstreles el tiempo real con traslados, chequeos y control de calidad.
+- Preguntas de encargo vagas ("ver cómo está el edificio"): devuélvalas con "¿qué decidirá el cliente con esto?".
+
+**Verificación de cierre:** cada participante escribe en una tarjeta la pregunta del caso conductor y un límite de lo que el dron podrá responder. Revise las tarjetas antes del módulo siguiente.
