@@ -126,7 +126,7 @@ Con el zoom (0.4 mm/px) el problema es 4 veces mayor: las fotos de detalle se to
 - Los edificios aceleran el viento en esquinas, bordes de cubierta y entre edificios cercanos, y generan remolinos a sotavento. No se acerque a una esquina en un día con ráfagas.
 - Mida el viento en sitio antes de despegar y vigílelo durante el vuelo.
 
-**Lluvia y humedad:** no se vuela con lluvia (salvo equipo y autorización que lo permitan), y las superficies mojadas cambian el aspecto de las fisuras y anulan la termografía, que tiene condiciones propias (módulo 7).
+**Lluvia y humedad:** no se vuela con lluvia (salvo equipo y autorización que lo permitan), y las superficies mojadas cambian el aspecto de las fisuras: se vuela con la fachada seca.
 
 ## 4.6 Tiempo, baterías y contingencias
 
@@ -166,7 +166,7 @@ Para el caso conductor:
 4. ¿Por qué no se cubre una fachada completa con el zoom?
 5. Con GSD de 0.4 mm/px y 1/1000 s, ¿a qué velocidad máxima puede moverse el dron para que el desplazamiento sea menor de 0.5 px?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** la cadena del plan es siempre la misma: detalle más pequeño → GSD → distancia → huella → malla de fotos → tiempo y baterías. Si la distancia resulta insegura, se cambia de cámara, no de distancia.
 
@@ -181,7 +181,7 @@ Para el caso conductor:
 
 **Secuencia de la clase (240 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-15 | Apertura | Muestra la misma fisura a dos GSD y pregunta qué se puede afirmar con cada foto | Describen lo que ven y lo que no |
 | 15-45 | 4.1 Detectar y medir | Pega el fisurómetro en el muro | Fotografían con el teléfono a 1, 3 y 6 m y anotan desde qué distancia dejan de distinguir cada línea |

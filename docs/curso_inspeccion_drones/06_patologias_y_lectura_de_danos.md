@@ -1,6 +1,6 @@
 # Módulo 6. Patologías y lectura de daños desde la imagen
 
-**Duración:** 6 h (4 h de teoría y 2 h de taller) · **Competencia:** C6
+**Duración:** 7 h (4 h de teoría y 3 h de taller) · **Competencia:** C6
 
 La orientación de una fisura indica la dirección de la tracción que la abrió: la fisura es perpendicular a esa tracción, y es la herramienta más útil para leer un daño.
 
@@ -60,7 +60,7 @@ En Chile predominan los edificios de muros de hormigón armado: en ellos se mira
 
 1. Manchas de óxido que escurren por la superficie.
 2. Fisuras paralelas a las barras, a menudo en las esquinas.
-3. Delaminación: el recubrimiento suena hueco; desde el aire se puede sospechar con termografía (módulo 7).
+3. Delaminación: el recubrimiento suena hueco; desde el aire solo se sospecha por manchas, fisuras o abombamientos, y se confirma con percusión.
 4. Desprendimiento con armadura expuesta y pérdida de sección visible.
 
 La pérdida de sección real no se mide desde una foto: se mide en sitio, limpiando la barra.
@@ -91,7 +91,7 @@ La mayoría de estos anchos no se miden desde el dron con el GSD habitual (módu
 | --- | --- | --- |
 | Corrosión generalizada | Pintura perdida, óxido extendido, escamas | La pérdida de espesor requiere ultrasonido |
 | Corrosión localizada | Picaduras, corrosión en rendijas, en uniones, bajo apoyos y donde se acumula agua | Zonas ocultas |
-| Pandeo y deformaciones | Alas o almas onduladas, elementos curvados, diagonales flojas | Deformaciones pequeñas: comparar con la geometría (módulo 8) |
+| Pandeo y deformaciones | Alas o almas onduladas, elementos curvados, diagonales flojas | Deformaciones pequeñas: comparar con la geometría (módulo 7) |
 | Uniones | Pernos faltantes, tuercas sueltas, marcas de óxido que delatan movimiento, placas deformadas | El apriete y el estado interno no se ven |
 | Soldaduras | Grietas visibles en el cordón o en el metal adyacente, óxido en la raíz | Las grietas finas requieren ensayos no destructivos (tintas, partículas magnéticas, ultrasonido) |
 | Recubrimientos | Ampollas, desprendimiento de pintura, galvanizado consumido | — |
@@ -113,11 +113,11 @@ En Chile la albañilería es sobre todo **confinada** (NCh 2123: paños de ladri
 | Grietas escalonadas por las juntas | Movimientos térmicos o de retracción, asentamiento leve |
 | Piezas desprendidas, pérdida de mortero | Envejecimiento, humedad, sismo |
 
-Un muro de relleno no siempre está en el modelo estructural, pero interactúa con el marco en un sismo: su daño puede indicar un problema en el marco vecino (pilar corto, deriva alta). El laboratorio del módulo 9 tiene un caso así.
+Un muro de relleno no siempre está en el modelo estructural, pero interactúa con el marco en un sismo: su daño puede indicar un problema en el marco vecino (pilar corto, deriva alta). El laboratorio del módulo 8 tiene un caso así.
 
 ## 6.5 Fachadas
 
-- **Enchapes cerámicos y de piedra:** piezas faltantes, fisuras, canterías abiertas, abombamiento y desprendimiento, el riesgo más serio para los peatones. La adherencia no se ve en la foto: la termografía sugiere zonas huecas y la percusión en sitio las confirma.
+- **Enchapes cerámicos y de piedra:** piezas faltantes, fisuras, canterías abiertas, abombamiento y desprendimiento, el riesgo más serio para los peatones. La adherencia no se ve en la foto: la imagen muestra abombamientos y juntas abiertas, y la percusión en sitio confirma las zonas huecas.
 - **Fachadas ventiladas:** anclajes corroídos o faltantes, placas desalineadas.
 - **Muros cortina y vidrio:** vidrios rotos, sellos deteriorados, perfiles deformados.
 - **Estucos y pinturas:** fisuras en malla (retracción), ampollas, manchas de humedad, hongos.
@@ -138,7 +138,7 @@ Después de un sismo, un incendio, una inundación o un aluvión, el dron permit
 ## 6.8 Medir desde la imagen
 
 - **Ancho de fisura:** píxeles a lo ancho × GSD, en una foto frontal, con incertidumbre de ±1 px. Si la fisura ocupa menos de 3 px, se reporta como "menor de 3 × GSD" y se pide medición en sitio.
-- **Longitud y área:** en ortomosaicos de fachada o en el modelo 3D (módulo 8), que tienen escala real. En fotos sueltas, con una referencia de tamaño conocido en el mismo plano.
+- **Longitud y área:** en ortomosaicos de fachada o en el modelo 3D (módulo 7), que tienen escala real. En fotos sueltas, con una referencia de tamaño conocido en el mismo plano.
 - **Inclinación o desaplome:** en el modelo 3D, no en una foto (la perspectiva engaña).
 - Siempre se informa con qué se midió (foto, ortomosaico, nube de puntos) y la incertidumbre.
 
@@ -149,13 +149,13 @@ Cada hallazgo recibe dos calificaciones (escalas completas en el anexo B): **sev
 La severidad sube cuando:
 
 - El elemento es crítico para la estabilidad: muros y pilares de los pisos inferiores, elementos de transferencia, voladizos sobre zonas de paso.
-- El modelo estructural indica una relación demanda/capacidad alta o una deriva cercana al límite de la NCh 433 en ese elemento o piso (módulo 9).
+- El modelo estructural indica una relación demanda/capacidad alta o una deriva cercana al límite de la NCh 433 en ese elemento o piso (módulo 8).
 - El daño avanza respecto a la inspección anterior.
 - Hay riesgo de caída de objetos sobre personas.
 
-## Taller (2 h)
+## Taller (3 h)
 
-Cada grupo recibe 30 imágenes (del vuelo del módulo 5 o del banco del curso) y, para cada una:
+Cada grupo recibe 45 imágenes (30 del banco del curso y 15 de su propio vuelo del módulo 5) y, para cada una:
 
 1. Identifica el daño, el elemento y la zona del elemento.
 2. Propone la causa probable y la justifica con el patrón.
@@ -180,7 +180,7 @@ Las clasificaciones se comparan entre grupos y las diferencias se discuten. El t
 4. Con GSD de 1.64 mm/px, una fisura ocupa 2 px. ¿Cómo la reporta?
 5. ¿Por qué un enchape abombado en el piso 6 sobre una vereda sube de severidad?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** una fisura es perpendicular a la tracción que la abrió; primero se observa (qué, dónde, cómo), después se interpreta (por qué) y al final se califica (severidad y confianza).
 
@@ -189,11 +189,11 @@ Las clasificaciones se comparan entre grupos y las diferencias se discuten. El t
 - El banco de imágenes ordenado por material y tipo de daño, con casos chilenos: edificios de muros dañados en el terremoto del Maule de 2010, viviendas de albañilería confinada, corrosión en el borde costero.
 - Una viga de goma espuma con una cuadrícula dibujada, una tiza y una hoja de papel para las demostraciones.
 - Un visor de imágenes que muestre la posición en píxeles, para el ejercicio de medición.
-- Las 30 imágenes del taller y una planilla de clasificación por grupo.
+- Las 45 imágenes del taller (30 del banco y 15 del vuelo de cada grupo) y una planilla de clasificación por grupo.
 
-**Secuencia del módulo (360 min):**
+**Secuencia del módulo (420 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-20 | Apertura: "la fisura habla" | Hace las demostraciones de la viga de espuma, la tiza y el papel | Predicen dónde y cómo aparecerá la fisura |
 | 20-90 | 6.1 y 6.2 Hormigón armado | Proyecta una foto por patrón: flexión, corte, torsión, compresión, pilar corto, borde de muro, corrosión, retracción. Antes de explicar, pregunta | Para cada foto dicen qué, dónde, cómo y proponen la causa |
@@ -203,7 +203,7 @@ Las clasificaciones se comparan entre grupos y las diferencias se discuten. El t
 | 165-195 | 6.5 a 6.7 Fachadas, techumbres y daños posteriores a un sismo | Muestra enchapes, voladizos, techumbres; presenta las fichas del MINVU y el Anexo A de la NCh 433 | Discuten qué aporta el dron a cada ficha |
 | 195-225 | 6.8 Medir desde la imagen | Da una foto frontal con su GSD | Cuentan los píxeles de una fisura, calculan el ancho y su incertidumbre |
 | 225-240 | 6.9 Severidad y confianza | Presenta cinco casos | Cada uno califica en silencio; se comparan y se discuten las diferencias |
-| 240-360 | Taller | Circula, pide justificar cada causa con el patrón | Clasifican las 30 imágenes; puesta en común final |
+| 240-420 | Taller | Circula, pide justificar cada causa con el patrón | Clasifican las 45 imágenes; puesta en común final |
 
 **Demostraciones para explicar la regla de la tracción:**
 

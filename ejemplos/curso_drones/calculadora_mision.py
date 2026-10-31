@@ -18,7 +18,7 @@ import math
 import sys
 from dataclasses import dataclass, replace
 
-PX_MEDICION = 3  # píxeles a lo ancho de un detalle (fisura, mancha térmica) para medirlo; criterio del curso
+PX_MEDICION = 3  # píxeles a lo ancho de un detalle (fisura, desprendimiento) para medirlo; criterio del curso
 
 
 @dataclass(frozen=True)
@@ -34,7 +34,6 @@ class Camara:
 CAMARAS = {
     "gran_angular": Camara('Gran angular, sensor 1"', 13.2, 8.8, 8.8, 5472, 3648),
     "zoom": Camara('Zoom, sensor 1/2"', 6.4, 4.8, 40.0, 4000, 3000),
-    "termica": Camara("Térmica radiométrica 640×512, píxel 12 µm", 7.68, 6.144, 13.0, 640, 512),
 }
 
 

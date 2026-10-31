@@ -30,7 +30,7 @@ Las listas se imprimen, se diligencian en cada operación y se archivan con la b
 - [ ] Briefing hecho: objetivo, ruta, roles, frases, límites, emergencias
 - [ ] Aeronave: estructura, brazos y hélices sin daño y bien montados
 - [ ] Batería bien insertada y asegurada; batería del control cargada; paracaídas de emergencia instalado y revisado
-- [ ] Cámara: tarjeta, formato (RAW + JPEG), obturador, exposición, enfoque; térmica radiométrica
+- [ ] Cámara: tarjeta, formato (RAW + JPEG), obturador, exposición, enfoque
 - [ ] Brújula e IMU sin alertas; calibración lejos de la estructura si se requiere
 - [ ] GNSS con satélites suficientes; RTK en solución fija si se usa
 - [ ] Punto de retorno (home) registrado en el sitio correcto
@@ -56,7 +56,7 @@ Las listas se imprimen, se diligencian en cada operación y se archivan con la b
 
 ## A.5 Al terminar en el sitio
 
-- [ ] Control de calidad en portátil: nitidez al 100 %, cobertura, exposición, metadatos, pares térmicos
+- [ ] Control de calidad en portátil: nitidez al 100 %, cobertura, exposición, metadatos
 - [ ] Lista de detalles prioritarios del plan completa (o razones por las que no)
 - [ ] Dos copias de los datos antes de formatear tarjetas
 - [ ] Área de seguridad retirada; sitio entregado como se encontró

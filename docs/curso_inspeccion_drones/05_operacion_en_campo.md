@@ -1,6 +1,6 @@
 # Módulo 5. Operación en campo cerca de estructuras
 
-**Duración:** 6 h (1.5 h de teoría y 4.5 h de práctica) · **Competencia:** C5
+**Duración:** 7 h (1.5 h de teoría y 5.5 h de práctica) · **Competencia:** C5
 
 Junto a una estructura la protección principal es la distancia (mínimo 5 m) y el observador, no los sensores del dron.
 
@@ -81,7 +81,6 @@ Toda emergencia, aunque termine bien, se registra en la bitácora y se analiza a
 2. **Cobertura sistemática** con la malla del plan, en modo automático si el software lo permite o manual con pasadas a distancia constante.
 3. **Detalles** con zoom en estacionario, siguiendo la lista del plan y lo que el operador de cámara descubre en vivo.
 4. Para cada detalle, una foto de contexto (que muestre dónde está) y una de detalle frontal. Cuando sea posible, incluya una referencia de tamaño (junta, ladrillo, ventana de dimensión conocida).
-5. Fotos térmicas en la ventana horaria del módulo 7.
 
 Nombre de los vuelos en la bitácora: `AAAAMMDD_estructura_fachada_vuelo`, por ejemplo `20261105_EdA_F1_V02`.
 
@@ -93,18 +92,18 @@ Antes de recoger el equipo, en un computador portátil y no en la pantalla del c
 - [ ] La cobertura está completa: no faltan pasadas ni esquinas
 - [ ] La exposición es correcta en sombras (aleros, fondos de losa)
 - [ ] Los metadatos de posición están (EXIF/XMP) y, si hubo RTK, la solución fue fija
-- [ ] Las térmicas son radiométricas y tienen su par visible
 - [ ] Hay dos copias de los datos antes de formatear las tarjetas
 
 Si algo falla, se repite en el sitio: volver otro día cuesta movilización, autorización y clima.
 
-## Práctica (4.5 h)
+## Práctica (5.5 h)
 
 1. **Simulador (1 h):** vuelo manual en ATTI, pasadas paralelas a un muro a distancia constante, recuperación ante pérdida de GNSS simulada.
 2. **Chequeos y briefing (0.5 h):** cada grupo diligencia las listas del anexo A y hace el briefing.
 3. **Vuelo de fachada (2 h):** ensayo de deriva, cobertura de un paño de fachada según el plan del módulo 4 y detalles con zoom, con rotación de roles.
-4. **Vuelo de cubierta (0.5 h):** malla nadir y órbita oblicua.
-5. **Control de calidad y descarga (0.5 h).**
+4. **Fotos de detalle con zoom (1 h):** en estacionario, sobre la lista de detalles del plan, con foto de contexto y foto frontal de cada uno.
+5. **Vuelo de cubierta (0.5 h):** malla nadir y órbita oblicua.
+6. **Control de calidad y descarga (0.5 h).**
 
 ## Errores frecuentes
 
@@ -121,7 +120,7 @@ Si algo falla, se repite en el sitio: volver otro día cuesta movilización, aut
 3. ¿Qué riesgo tiene el RTH configurado a 30 m cuando el dron está junto a un balcón del piso 5?
 4. Mencione cuatro verificaciones del control de calidad en sitio.
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** junto a una estructura el dron pierde sus ayudas (GNSS, brújula, sensores de obstáculos); lo que protege es la distancia, el observador y un equipo que se comunica con frases cortas y obedece el "Alto".
 
@@ -134,9 +133,9 @@ Si algo falla, se repite en el sitio: volver otro día cuesta movilización, aut
 - Listas de chequeo del anexo A impresas, radios, conos, cinta, chalecos y cascos.
 - Un computador portátil por grupo para el control de calidad.
 
-**Secuencia del módulo (360 min):**
+**Secuencia del módulo (420 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-15 | 5.1 Preparación del sitio | Recorre con el grupo un croquis del sitio de prácticas: obstáculos, despegue, alterno, área de seguridad con los 30 m de la DAN 151 | Marcan en el croquis cada elemento |
 | 15-30 | 5.2 Comunicación | Hace un simulacro de voz con las frases de la tabla | Practican las frases en ronda; repiten cada orden recibida |
@@ -145,9 +144,10 @@ Si algo falla, se repite en el sitio: volver otro día cuesta movilización, aut
 | 75-90 | 5.5 Simulacro de emergencias | Saca tarjetas al azar en medio de una conversación | El grupo responde con la primera acción en menos de cinco segundos |
 | 90-150 | Práctica: simulador | Supervisa el vuelo manual en ATTI y la recuperación ante pérdida de GNSS | Vuelan por turnos pasadas paralelas a un muro virtual |
 | 150-180 | Práctica: chequeos y briefing | Exige las listas firmadas y escucha el briefing de cada grupo | Diligencian el anexo A y hacen el briefing |
-| 180-300 | Práctica: vuelo de fachada | Es el operador al mando; detiene la práctica ante cualquier desviación | Rotan roles: observador, operador de cámara, coordinador; hacen el ensayo de deriva, la cobertura y los detalles |
-| 300-330 | Práctica: cubierta | Dirige la malla nadir y la órbita | Rotan roles |
-| 330-360 | Control de calidad y cierre | Revisa con cada grupo las fotos al 100 % en el portátil | Completan la lista 5.7, hacen dos copias y la revisión del día |
+| 180-300 | Práctica: vuelo de fachada | Coordina con el operador al mando (él mismo, si tiene credencial, o el operador invitado) y detiene la práctica ante cualquier desviación | Rotan roles: observador, operador de cámara, coordinador; hacen el ensayo de deriva, la cobertura y los detalles |
+| 300-360 | Práctica: detalle con zoom | Revisa en vivo el encuadre y la nitidez de cada detalle | Fotografían la lista de detalles con foto de contexto y frontal |
+| 360-390 | Práctica: cubierta | Dirige la malla nadir y la órbita | Rotan roles |
+| 390-420 | Control de calidad y cierre | Revisa con cada grupo las fotos al 100 % en el portátil | Completan la lista 5.7, hacen dos copias y la revisión del día |
 
 **Cómo explicar los puntos clave:**
 
@@ -159,7 +159,7 @@ Si algo falla, se repite en el sitio: volver otro día cuesta movilización, aut
 
 **Reglas de seguridad de la práctica** (léalas en el briefing):
 
-- El instructor operador es el operador al mando y puede tomar el control en cualquier momento.
+- El operador al mando es el relator, si tiene credencial RPAS vigente, o el operador invitado; puede tomar el control en cualquier momento.
 - Nadie entra al área de seguridad sin autorización del coordinador.
 - Cualquier persona puede decir "Alto" y se obedece sin discutir.
 - Se suspende la práctica si el viento supera el límite del plan o si aparece una persona ajena dentro de los 30 m.

@@ -25,7 +25,6 @@ class TestCalculadoraMision(unittest.TestCase):
         camara = calc.CAMARAS["gran_angular"]
         self.assertAlmostEqual(calc.gsd_mm(camara, 6.0), 1.645, places=3)
         self.assertAlmostEqual(calc.gsd_mm(calc.CAMARAS["zoom"], 10.0), 0.40, places=3)
-        self.assertAlmostEqual(calc.gsd_mm(calc.CAMARAS["termica"], 10.0), 9.23, places=2)
         self.assertAlmostEqual(calc.distancia_para_gsd(camara, calc.gsd_mm(camara, 7.3)), 7.3)
         ancho, alto = calc.huella_m(camara, 6.0)
         self.assertAlmostEqual(ancho, 9.0)

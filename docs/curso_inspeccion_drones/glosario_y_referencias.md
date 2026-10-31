@@ -11,14 +11,11 @@
 | Credencial de operador RPAS | Habilitación de la DGAC para operar RPAS sobre áreas pobladas |
 | D/C | Relación demanda/capacidad de un elemento, tomada del análisis estructural |
 | Deriva de entrepiso | Desplazamiento relativo entre dos niveles dividido por su altura; la NCh 433 la limita a 0.002 en el centro de masas |
-| Emisividad (ε) | Fracción de radiación que emite una superficie frente a un cuerpo negro a la misma temperatura (0 a 1) |
 | GCP y punto de chequeo | Puntos con coordenadas conocidas: los de control ajustan el modelo; los de chequeo, independientes, miden su exactitud |
 | GSD | Tamaño en el objeto de un píxel de la imagen; en una fachada, mm por píxel |
 | Hallazgo | Observación registrada de un daño o anomalía, con ubicación, evidencia y clasificación |
 | Multitrayecto | Recepción de señales GNSS reflejadas en muros, que degrada la posición junto a estructuras |
-| NETD | Sensibilidad térmica: la menor diferencia de temperatura que distingue la cámara |
 | Ondulación geoidal (N) | Separación entre el geoide y el elipsoide; relaciona las alturas: h = H + N |
-| Radiométrica | Cámara térmica que guarda la temperatura de cada píxel |
 | RMS | Raíz del promedio de los residuos al cuadrado |
 | RPA / RPAS | Aeronave pilotada a distancia / sistema completo: aeronave, estación de pilotaje y enlace (término de la DGAC para el dron) |
 | RTH | Retorno automático al punto de despegue |
@@ -56,9 +53,8 @@
 
 - Instituto Geográfico Militar (IGM), Red Geodésica Nacional y marco de referencia SIRGAS-Chile.
 
-**Referencias técnicas sin equivalente en norma chilena** (se usan solo donde no hay NCh, como se indica en cada módulo):
+**Referencia técnica sin equivalente en norma chilena** (se usa solo para los anchos de fisura, como se indica en el módulo 6):
 
 - ACI 224R, control de fisuración en estructuras de hormigón (la NCh 430 adopta el ACI 318).
-- ISO 6781 y ASTM C1060, termografía de la envolvente de edificaciones; ASTM D4788, delaminaciones en tableros de puentes.
 
 Los datos de la DAN 151 se tomaron del texto de la Edición 3 citado en fuentes públicas y de resúmenes de centros de instrucción; el sitio de la DGAC no se pudo consultar directamente al redactar este manual, así que las cifras de la sección 2.5 deben confirmarse en el texto oficial.

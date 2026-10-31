@@ -58,7 +58,7 @@ python -m unittest discover -s tests -t .
 
 ## Curso de inspección de edificaciones y estructuras con drones
 
-Curso de 40 horas, en 10 módulos, para planear, ejecutar y documentar
+Curso de 40 horas, en 9 módulos, para planear, ejecutar y documentar
 inspecciones con dron y llevar los hallazgos al modelo estructural, con
 normativa chilena (DAN 151 de la DGAC, normas NCh, SIRGAS-Chile):
 [docs/curso_inspeccion_drones/](docs/curso_inspeccion_drones/README.md).

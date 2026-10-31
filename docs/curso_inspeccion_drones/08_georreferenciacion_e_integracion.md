@@ -1,6 +1,6 @@
-# Módulo 9. Georreferenciación de hallazgos e integración con el modelo estructural
+# Módulo 8. Georreferenciación de hallazgos e integración con el modelo estructural
 
-**Duración:** 2 h (0.5 h de teoría y 1.5 h de laboratorio) · **Competencia:** C9
+**Duración:** 2 h (0.5 h de teoría y 1.5 h de laboratorio) · **Competencia:** C8
 
 Un hallazgo ubicado en un elemento del modelo sirve para decidir: "fisura de corte en el pilar C1-02, D/C 0.86" dice más que "fisura en la fachada norte, piso 1".
 
@@ -10,19 +10,19 @@ Un hallazgo ubicado en un elemento del modelo sirve para decidir: "fisura de cor
 2. Lleva los hallazgos de la inspección al sistema del modelo estructural y los asigna a elementos.
 3. Usa los resultados del análisis (demanda/capacidad, derivas frente al límite de la NCh 433) para priorizar los hallazgos.
 
-## 9.1 Por qué ubicar el hallazgo en el modelo
+## 8.1 Por qué ubicar el hallazgo en el modelo
 
 - Relaciona el daño con la demanda calculada: un daño en un elemento muy exigido es más preocupante.
 - Permite volver al mismo elemento en la siguiente inspección y comparar.
 - Pone los hallazgos en el mismo mapa que el modelo (GeoJSON en QGIS, KML en Google Earth).
 
-## 9.2 El marco de referencia en Chile
+## 8.2 El marco de referencia en Chile
 
 - **SIRGAS-Chile** es el sistema de referencia oficial, mantenido por el Instituto Geográfico Militar (IGM) en la Red Geodésica Nacional. La realización publicada por el IGM usa la época 2021.0 y el elipsoide GRS80.
 - En Chile continental se usa la proyección **UTM, husos 18 Sur y 19 Sur**. Santiago está en el huso 19 Sur.
 - **Chile se mueve.** Los grandes terremotos desplazan la red geodésica: después del terremoto del Maule de 2010 hubo puntos que se movieron metros. Por eso toda coordenada se declara con su marco y su época, y los puntos de control de una inspección se vuelven a medir después de un sismo fuerte.
 
-## 9.3 Los tres errores que mueven un hallazgo
+## 8.3 Los tres errores que mueven un hallazgo
 
 **1. Alturas elipsoidales y ortométricas mezcladas.** El GNSS y muchos programas de fotogrametría trabajan con altura elipsoidal h; los planos y la topografía, con altura ortométrica H. Se relacionan con la ondulación geoidal N del sitio:
 
@@ -36,17 +36,17 @@ Si los puntos de control se dieron con H y los hallazgos salen con h (o al revé
 
 **3. Norte verdadero y norte de cuadrícula.** Si el acimut del modelo se tomó de un plano en UTM y se declaró como verdadero, el modelo queda girado la convergencia de meridianos. En Santiago, lejos del meridiano central del huso 19, la convergencia es de 0.91°: 16 cm en 10 m. El software lo corrige si se declara `"norte": "cuadricula"`.
 
-## 9.4 Flujo de integración
+## 8.4 Flujo de integración
 
 1. Una red de puntos de control se mide en terreno con GNSS RTK o estación total, en SIRGAS-Chile.
-2. Esa misma red georreferencia el modelo fotogramétrico (módulo 8) y el modelo estructural.
+2. Esa misma red georreferencia el modelo fotogramétrico (módulo 7) y el modelo estructural.
 3. De la fotogrametría salen los hallazgos con coordenadas UTM y altura ortométrica.
 4. El script del laboratorio lleva cada hallazgo al sistema del modelo y lo asigna al elemento más cercano.
 5. Cada hallazgo se completa con la D/C del elemento y la deriva del piso, y pasa a la ficha y al informe.
 
 Como la misma red de puntos georreferencia los dos modelos, ambos quedan en el mismo marco y los errores de dos georreferencias distintas no se suman.
 
-## 9.5 Laboratorio
+## 8.5 Laboratorio
 
 **Edificio de ejemplo:** marco de hormigón armado de 3 pisos en Santiago, 12 × 10 m, con pilares en los ejes A-B-C (x = 0, 6, 12 m) y 1-2-3 (y = 0, 5, 10 m), pisos a 3.5, 6.5 y 9.5 m y albañilería de relleno en las fachadas. Los resultados del análisis son sintéticos, solo para el curso. Los hallazgos de `ejemplos/curso_drones/hallazgos.json` simulan lo que entrega el modelo fotogramétrico: coordenadas UTM 19S y altura ortométrica en SIRGAS-Chile, con un error de un par de centímetros.
 
@@ -82,7 +82,7 @@ H01         12.00   -0.25    1.83  C1-02        0.25  Fisura diagonal
 H02          3.00   -0.15    6.11  VX2-00       0.42  Fisura vertical
 H03         12.14    1.20    9.16  VY3-02       0.37  Desprendimiento con armadura expuesta
 H04          9.21    2.58    9.55  L3-01        0.05  Mapa de fisuras
-H05          2.99   10.14    5.21  ¿VX2-20?     1.29  Anomalía térmica
+H05          2.99   10.14    5.21  ¿VX2-20?     1.29  Mancha de humedad
 H06         -0.26   10.03    0.33  C1-20        0.26  Fisura horizontal
 ```
 
@@ -96,7 +96,7 @@ El script:
 
 La distancia de 0.25 m de H01 es la mitad del lado del pilar de 50 cm: la fisura está en la cara exterior, y el modelo trabaja con ejes.
 
-**Paso 3. Interpretar el hallazgo sin elemento.** H05 es una anomalía térmica en el muro de albañilería de la fachada del eje 3, piso 2. El muro de relleno no está en el modelo, por eso queda a 1.29 m de la viga más cercana. No se descarta: se reporta asociado al marco del eje 3 entre los ejes A y B, en el piso que está al 96 % del límite de deriva. La pregunta para la verificación en sitio es si la anomalía es humedad (lo que sugiere su forma) o daño del muro por interacción con el marco (sección 6.4).
+**Paso 3. Interpretar el hallazgo sin elemento.** H05 es una mancha de humedad con eflorescencias en el muro de albañilería de la fachada del eje 3, piso 2. El muro de relleno no está en el modelo, por eso queda a 1.29 m de la viga más cercana. No se descarta: se reporta asociado al marco del eje 3 entre los ejes A y B, en el piso que está al 96 % del límite de deriva. La pregunta para la verificación en sitio es si la humedad viene de una filtración (por la ventana o por la junta con el marco) o si hay daño del muro por interacción con el marco (sección 6.4).
 
 **Paso 4. Priorizar con el análisis.** Relación D/C del caso SISMO\_X (archivo `ejemplos/curso_drones/edificio_santiago.json`, sección `resultados`):
 
@@ -123,7 +123,7 @@ H01         12.00   -0.25  -28.17  ¿C1-02?     28.17  Fisura diagonal
 H02          3.00   -0.15  -23.89  ¿C1-01?     24.08  Fisura vertical
 H03         12.14    1.20  -20.84  ¿C1-02?     20.87  Desprendimiento con armadura expuesta
 H04          9.21    2.58  -20.45  ¿C1-12?     20.78  Mapa de fisuras
-H05          2.99   10.14  -24.79  ¿C1-20?     24.97  Anomalía térmica
+H05          2.99   10.14  -24.79  ¿C1-20?     24.97  Mancha de humedad
 H06         -0.26   10.03  -29.67  ¿C1-20?     29.67  Fisura horizontal
 ```
 
@@ -151,7 +151,7 @@ Todos los hallazgos bajan exactamente N = 30 m y quedan bajo el terreno, mientra
 3. ¿Por qué conviene usar la misma red de puntos de control para la fotogrametría y para el modelo estructural?
 4. ¿Cómo cambian la prioridad de una fisura la relación D/C del elemento y la deriva del piso?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** un hallazgo bien ubicado se asigna a un elemento del modelo y se prioriza con la D/C y la deriva; si todos los hallazgos se desplazan lo mismo en vertical, el error está en las alturas.
 
@@ -164,10 +164,10 @@ Todos los hallazgos bajan exactamente N = 30 m y quedan bajo el terreno, mientra
 
 **Secuencia del módulo (120 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-10 | Apertura | Muestra una fisura que, por un error de alturas, aparece 30 m bajo el terreno; pregunta qué pudo pasar | Proponen causas |
-| 10-30 | 9.2 y 9.3 Marco y errores | Explica SIRGAS-Chile, los husos, el movimiento de la red después de un terremoto y los tres errores con dibujos | Ubican Santiago en el huso 19 y calculan cuánto se mueve un punto con 0.91° a 10 m |
+| 10-30 | 8.2 y 8.3 Marco y errores | Explica SIRGAS-Chile, los husos, el movimiento de la red después de un terremoto y los tres errores con dibujos | Ubican Santiago en el huso 19 y calculan cuánto se mueve un punto con 0.91° a 10 m |
 | 30-40 | Paso 1 | Proyecta la salida y lee con el grupo el RMS y las derivas | Ejecutan la georreferencia y abren el KML |
 | 40-55 | Paso 2 | Explica qué hace el script, paso por paso | Ejecutan el script y comparan con la salida esperada |
 | 55-65 | Paso 3 | Pregunta por qué H05 no cae en un elemento | Discuten y concluyen que es un muro no modelado |
@@ -192,8 +192,8 @@ Todos los hallazgos bajan exactamente N = 30 m y quedan bajo el terreno, mientra
 
 **Dificultades frecuentes y cómo abordarlas:**
 
-- Problemas de instalación: trabaje en parejas y deje un computador del instructor listo para proyectar los resultados.
+- Problemas de instalación: trabaje en parejas y deje un computador del relator listo para proyectar los resultados.
 - Ansiedad ante la consola: dicte los comandos, uno a la vez, y lea la salida en voz alta.
 - Interpretar H05 como un error del programa: vuelva al esquema del edificio y muestre que el muro está entre los pilares, no sobre un elemento modelado.
 
-**Verificación de cierre:** la tabla de prioridad completa y las fichas de H01 y H06, que pasan al informe del módulo 10.
+**Verificación de cierre:** la tabla de prioridad completa y las fichas de H01 y H06, que pasan al informe del módulo 9.

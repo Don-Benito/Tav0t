@@ -30,17 +30,17 @@ Una inspección busca evidencia del estado actual de una estructura para decidir
 | Cobertura completa y sistemática: cada metro cuadrado queda registrado | Ver dentro del material: corrosión de la armadura sin manifestación externa, vacíos internos |
 | Registro objetivo y repetible, que se puede volver a mirar y comparar en el tiempo | Ensayos: núcleos, esclerometría, ultrasonido, carbonatación, cloruros |
 | Modelos 3D y ortomosaicos medibles | Juicio estructural: la imagen no dice si el elemento es suficiente |
-| Termografía de grandes superficies | Zonas sin línea de vista: detrás de equipos, interiores cerrados, juntas ocultas |
+| Fotos de detalle con zoom óptico de zonas inaccesibles | Zonas sin línea de vista: detrás de equipos, interiores cerrados, juntas ocultas |
 | Rapidez en emergencias y en zonas de riesgo para personas | Operación con lluvia, viento fuerte o sin autorización de vuelo |
 
-La regla del curso: **el dron detecta, prioriza y documenta; el diagnóstico se confirma con la inspección de cerca o con ensayos cuando el hallazgo lo amerita.** El informe debe decir con claridad qué se observó desde el aire y qué falta verificar (módulo 10).
+La regla del curso: **el dron detecta, prioriza y documenta; el diagnóstico se confirma con la inspección de cerca o con ensayos cuando el hallazgo lo amerita.** El informe debe decir con claridad qué se observó desde el aire y qué falta verificar (módulo 9).
 
 **Beneficios y costos frente a la inspección tradicional:**
 
 - **Seguridad:** reduce el trabajo en altura y la exposición en zonas dañadas, pero introduce un riesgo nuevo, la caída de la aeronave, que se gestiona en el módulo 2.
 - **Tiempo:** una fachada de 30 × 24 m se fotografía completa en menos de una hora de vuelo (módulo 4). Procesar y revisar las fotos puede tardar más que el vuelo, y hay que presupuestarlo.
 - **Costo:** evita andamios, canastas y cierres prolongados, pero exige personal certificado, autorización, seguros y equipo.
-- **Datos:** genera cientos o miles de fotos por estructura. Sin un método de nombres, respaldo y revisión (módulo 10), la información se pierde.
+- **Datos:** genera cientos o miles de fotos por estructura. Sin un método de nombres, respaldo y revisión (módulo 9), la información se pierde.
 
 ## 1.3 Estructuras que se inspeccionan con dron
 
@@ -71,10 +71,10 @@ El control de calidad en sitio es la única vuelta atrás barata del flujo: si f
 3. **Plan de misión:** qué se fotografía, con qué sensor, a qué resolución, por qué ruta, con qué riesgos y qué permisos (módulos 2 y 4).
 4. **Vuelo y captura** (módulo 5).
 5. **Control de calidad en sitio:** antes de recoger el equipo se revisa que las fotos estén nítidas y que no falten zonas. Si falta algo, se vuelve al paso 4: volver otro día cuesta mucho más.
-6. **Procesamiento:** selección de fotos, modelo 3D, ortomosaicos, termogramas (módulos 7 y 8).
+6. **Procesamiento:** selección de fotos, modelo 3D y ortomosaicos (módulo 7).
 7. **Lectura de daños:** cada daño se convierte en un hallazgo con ficha (módulo 6 y anexo B).
-8. **Ubicación en el modelo:** cada hallazgo se asigna a un elemento estructural (módulo 9).
-9. **Informe:** hallazgos, severidad, limitaciones y recomendaciones (módulo 10).
+8. **Ubicación en el modelo:** cada hallazgo se asigna a un elemento estructural (módulo 8).
+9. **Informe:** hallazgos, severidad, limitaciones y recomendaciones (módulo 9).
 
 ## 1.5 El equipo de inspección
 
@@ -82,8 +82,8 @@ El control de calidad en sitio es la única vuelta atrás barata del flujo: si f
 | --- | --- | --- |
 | Piloto al mando | Seguridad del vuelo, cumplimiento de la autorización, decisión final de volar o no | No debe ser el operador de cámara en vuelos cerca de estructuras |
 | Observador visual | Vigila el espacio aéreo, la distancia a obstáculos y las personas | No |
-| Operador de cámara o inspector | Encuadre, exposición y decisión de qué fotografiar; reconoce el daño en vivo | Puede ser el ingeniero |
-| Ingeniero responsable | Define la pregunta, interpreta y firma el informe | Puede ser el inspector |
+| Operador de cámara o inspector | Encuadre, exposición y decisión de qué fotografiar; reconoce el daño en vivo | Puede ser el profesional responsable |
+| Profesional responsable (constructor civil, ingeniero o arquitecto) | Define la pregunta, interpreta, firma el informe y deriva al calculista lo que requiere evaluación estructural | Puede ser el inspector |
 | Coordinador de sitio | Cierre de áreas, comunicación con ocupantes y administración | Puede ser el observador en operaciones pequeñas |
 
 Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la receta de un accidente. Por eso el curso trabaja con equipos de al menos dos personas y, de preferencia, tres.
@@ -102,7 +102,7 @@ Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la 
 3. ¿Por qué el piloto no debe ser el operador de cámara cuando se vuela cerca de una fachada?
 4. ¿Qué información del modelo estructural conviene revisar antes de planear el vuelo y por qué?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** el dron es la cámara del inspector, no el inspector; toda inspección empieza con una pregunta y termina en una decisión.
 
@@ -115,7 +115,7 @@ Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la 
 
 **Secuencia de la clase (120 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-10 | Apertura | Muestra los dos juegos de fotos y pregunta: "¿qué decisión puede tomar el administrador con cada uno?" | Comparan y responden en voz alta |
 | 10-30 | 1.1 Tipos de inspección | Reparte las tarjetas de encargo y pide clasificar cada una y escribir su pregunta | En parejas clasifican y formulan la pregunta; se ponen en común |
@@ -130,7 +130,7 @@ Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la 
 **Cómo explicar los puntos clave:**
 
 - **"Toda inspección parte de una pregunta".** Use la analogía del examen médico: nadie pide "todos los exámenes"; el médico pide los que responden a su sospecha. La pregunta decide qué se fotografía, con qué resolución y qué se entrega.
-- **"El dron detecta, prioriza y documenta".** Muestre una foto de un enchape que se ve sano y cuéntele al grupo que a la percusión sonaba hueco. Pregunte: "¿podría el dron haberlo confirmado?". Respuesta: no; podría sospecharlo con termografía, pero la confirmación es en sitio.
+- **"El dron detecta, prioriza y documenta".** Muestre una foto de un enchape que se ve sano y cuéntele al grupo que a la percusión sonaba hueco. Pregunte: "¿podría el dron haberlo confirmado?". Respuesta: no; el dron no percute: la foto puede mostrar un abombamiento o una junta abierta, pero la confirmación es en sitio.
 - **El control de calidad como única vuelta atrás barata.** Haga la cuenta con el grupo: volver otro día significa nueva movilización, quizá una nueva autorización de la DGAC y esperar el clima. Revisar en el portátil cuesta 20 minutos.
 - **Atención dividida.** Durante la dinámica, quien "vuela" pierde la noción de la distancia en cuanto empieza a mirar el encuadre. Esa experiencia explica mejor que cualquier norma por qué se separan los roles.
 
@@ -143,7 +143,7 @@ Volar y mirar el daño a la vez divide la atención; cerca de una fachada es la 
 **Dificultades frecuentes y cómo abordarlas:**
 
 - Quienes vienen del vuelo quieren pasar rápido a volar: asígneles en la dinámica el rol de operador de cámara para que vivan la otra mitad del trabajo.
-- Los ingenieros subestiman la operación aérea: pídales estimar el tiempo de una inspección completa y luego muéstreles el tiempo real con traslados, chequeos y control de calidad.
+- Quienes vienen de la construcción o de la ingeniería subestiman la operación aérea: pídales estimar el tiempo de una inspección completa y luego muéstreles el tiempo real con traslados, chequeos y control de calidad.
 - Preguntas de encargo vagas ("ver cómo está el edificio"): devuélvalas con "¿qué decidirá el cliente con esto?".
 
 **Verificación de cierre:** cada participante escribe en una tarjeta la pregunta del caso conductor y un límite de lo que el dron podrá responder. Revise las tarjetas antes del módulo siguiente.

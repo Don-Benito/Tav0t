@@ -2,13 +2,13 @@
 
 **Duración:** 2 h (1.5 h de teoría y 0.5 h de práctica con los equipos) · **Competencia:** C3
 
-Para inspeccionar se elige un multirrotor con cámara de sensor de 1" o mayor, obturador mecánico y zoom óptico, y una térmica radiométrica cuando la pregunta lo pide.
+Para inspeccionar se elige un multirrotor con cámara de sensor de 1" o mayor, obturador mecánico y zoom óptico; el curso trabaja solo con cámara RGB.
 
 **Objetivos de aprendizaje.**
 
 1. Elige el tipo de aeronave adecuado para cada estructura.
 2. Lee la ficha técnica de una cámara y extrae los datos que necesita para planear (sensor, focal, píxeles, obturador).
-3. Decide cuándo hace falta zoom, térmica, RTK o LiDAR.
+3. Decide cuándo hace falta zoom óptico, RTK o LiDAR.
 
 ## 3.1 Tipos de aeronave
 
@@ -54,16 +54,8 @@ Datos de la ficha técnica que se necesitan para planear:
 | --- | --- | --- | --- |
 | `gran_angular` | 1": 13.2 × 8.8 mm | 8.8 mm | 5472 × 3648 px |
 | `zoom` | 1/2": 6.4 × 4.8 mm | 40 mm (se cambia con `--focal`) | 4000 × 3000 px |
-| `termica` | Píxel de 12 µm: 7.68 × 6.14 mm | 13 mm | 640 × 512 px |
 
-## 3.3 Cámaras térmicas
-
-- **Radiométrica** (guarda la temperatura de cada píxel) frente a no radiométrica (solo imagen). Para inspección, siempre radiométrica: permite corregir la emisividad y medir diferencias de temperatura después del vuelo.
-- **Resolución:** 640 × 512 px es lo usual en equipos profesionales; con menos resolución hay que volar más cerca.
-- **Sensibilidad térmica (NETD):** la diferencia de temperatura más pequeña que distingue; 50 mK o menos es adecuado para edificaciones.
-- **Cámara doble (RGB + térmica):** facilita interpretar, porque cada termograma tiene su foto visible de la misma vista.
-
-## 3.4 Posicionamiento: GNSS, RTK y PPK
+## 3.3 Posicionamiento: GNSS, RTK y PPK
 
 | Modo | Precisión típica de la posición de la cámara | Comentario |
 | --- | --- | --- |
@@ -71,15 +63,15 @@ Datos de la ficha técnica que se necesitan para planear:
 | RTK (corrección en tiempo real desde una base o red) | Centímetros | Requiere enlace con la base durante el vuelo |
 | PPK (corrección en posproceso) | Centímetros | No depende del enlace en vuelo; requiere datos de una base |
 
-Cerca de fachadas altas y bajo puentes la señal GNSS se degrada: pocos satélites visibles y reflexiones en los muros. La posición RTK puede pasar de fija a flotante y empeorar a decímetros sin aviso evidente. Por eso, aun con RTK, el curso exige puntos de chequeo independientes (módulo 8).
+Cerca de fachadas altas y bajo puentes la señal GNSS se degrada: pocos satélites visibles y reflexiones en los muros. La posición RTK puede pasar de fija a flotante y empeorar a decímetros sin aviso evidente. Por eso, aun con RTK, el curso exige puntos de chequeo independientes (módulo 7).
 
-## 3.5 Otros sensores
+## 3.4 Otros sensores
 
 - **LiDAR aerotransportado:** nube de puntos directa; funciona con poca textura y atraviesa parcialmente la vegetación. Útil para geometría (desplomes, deformaciones de cubiertas grandes); no reemplaza la foto para ver fisuras.
 - **Multiespectral:** pensado para vegetación; en estructuras su uso es marginal (por ejemplo, vegetación invasiva en cubiertas).
 - **Sensores de contacto:** existen drones que apoyan un medidor de espesores por ultrasonido en estructuras de acero; son operaciones especializadas.
 
-## 3.6 Accesorios y mantenimiento
+## 3.5 Accesorios y mantenimiento
 
 - Baterías suficientes para la misión más un 50 % de reserva, con registro de ciclos de cada batería.
 - Hélices de repuesto: una hélice con una muesca se cambia.
@@ -89,7 +81,7 @@ Cerca de fachadas altas y bajo puentes la señal GNSS se degrada: pocos satélit
 
 ## Práctica (0.5 h)
 
-Con los equipos del curso: identificar en la ficha técnica los datos de la tabla 3.2, revisar baterías y hélices, y configurar el formato de foto (RAW + JPEG), el modo de obturador y el guardado radiométrico de la térmica.
+Con los equipos del curso: identificar en la ficha técnica los datos de la tabla 3.2, revisar baterías y hélices, y configurar el formato de foto (RAW + JPEG), el modo de obturador y el enfoque.
 
 ## Errores frecuentes
 
@@ -105,7 +97,7 @@ Con los equipos del curso: identificar en la ficha técnica los datos de la tabl
 3. ¿Qué ventaja de seguridad tiene una cámara con zoom óptico?
 4. ¿Por qué hay que verificar la precisión del RTK cerca de una fachada alta?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** el equipo se elige por la pregunta de la inspección y dentro de los límites de la DAN 151; de la ficha técnica solo importan unos pocos datos, y hay que saber leerlos.
 
@@ -113,20 +105,20 @@ Con los equipos del curso: identificar en la ficha técnica los datos de la tabl
 
 - Los drones del curso (o fotos de un multirrotor, uno con jaula y un ala fija) y el módulo de paracaídas.
 - La ficha técnica impresa de la cámara del curso, con la focal real y la equivalente.
-- La cámara térmica encendida y un teléfono con una aplicación que muestre los satélites GNSS.
+- Un teléfono con una aplicación que muestre los satélites GNSS.
 - Un ventilador pequeño para la demostración del obturador.
 
 **Secuencia de la clase (120 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-10 | Apertura | Pone sobre la mesa tres equipos (o sus fotos) y pregunta cuál usarían para una fachada, el interior de un estanque y un canal de 5 km | Eligen y justifican |
 | 10-35 | 3.1 Aeronaves | Explica los tipos y muestra el paracaídas; relaciona la masa de 9 kg y el paracaídas con la DAN 151 | Revisan el equipo y su placa de registro |
 | 35-60 | 3.2 Cámaras | Proyecta la ficha técnica; hace la demostración del obturador y la del zoom digital | Subrayan sensor, focal real y píxeles; calculan un GSD con cada focal |
-| 60-70 | 3.3 Térmica | Muestra el salón en la térmica: personas, una ventana y un objeto metálico | Anotan lo que les sorprende |
-| 70-85 | 3.4 GNSS, RTK y PPK | Compara en la aplicación los satélites junto a un muro y en un patio abierto | Leen la cantidad de satélites y la precisión |
-| 85-90 | 3.5 y 3.6 | Repasa LiDAR, accesorios y mantenimiento | Preguntan |
-| 90-120 | Práctica | Supervisa la configuración | Configuran RAW + JPEG, obturador y guardado radiométrico; revisan baterías y hélices |
+| 60-70 | 3.2 Zoom en terreno | Muestra con el zoom óptico una fisura del patio desde 10 m y la misma con la gran angular desde 3 m | Comparan detalle y distancia de seguridad |
+| 70-85 | 3.3 GNSS, RTK y PPK | Compara en la aplicación los satélites junto a un muro y en un patio abierto | Leen la cantidad de satélites y la precisión |
+| 85-90 | 3.4 y 3.5 | Repasa LiDAR, accesorios y mantenimiento | Preguntan |
+| 90-120 | Práctica | Supervisa la configuración | Configuran RAW + JPEG, obturador y enfoque; revisan baterías y hélices |
 
 **Cómo explicar los puntos clave:**
 
@@ -139,7 +131,7 @@ Con los equipos del curso: identificar en la ficha técnica los datos de la tabl
 **Preguntas para la clase (con respuesta esperada):**
 
 - "¿Qué tres datos de la ficha necesito para planear?" Ancho del sensor, focal real y resolución en píxeles.
-- "¿Por qué la térmica debe ser radiométrica?" Para corregir la emisividad y medir diferencias de temperatura después del vuelo.
+- "¿Qué gano con el zoom óptico?" El mismo GSD desde más lejos, es decir, más distancia de seguridad a la fachada.
 - "¿Qué exige la DAN 151 a la aeronave?" Hasta 9 kg, paracaídas de emergencia y registro en la DGAC.
 
 **Dificultades frecuentes y cómo abordarlas:**

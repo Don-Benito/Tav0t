@@ -38,7 +38,7 @@ Este anexo trae las respuestas de las autoevaluaciones, el banco de preguntas de
 1. GNSS degradado (multitrayecto y cielo obstruido), con posible paso a modo ATTI. Se aleja hacia el espacio abierto, estabiliza, aumenta la distancia y no se vuelve a acercar hasta que el ensayo de deriva sea aceptable.
 2. El acero desvía la brújula: la aeronave interpreta mal su rumbo y puede volar de forma errática.
 3. Al dispararse, el RTH sube en vertical hasta 30 m y puede chocar con el balcón del piso de arriba. Hay que pensar el RTH en cada punto y, si es necesario, configurar estacionario o aterrizaje ante la pérdida de enlace.
-4. Cuatro de estos: nitidez al 100 %, cobertura completa, exposición en sombras, metadatos de posición (y RTK fija), pares térmica-visible, dos copias antes de formatear.
+4. Cuatro de estos: nitidez al 100 %, cobertura completa, exposición en sombras, metadatos de posición (y RTK fija), dos copias antes de formatear.
 
 **Módulo 6.**
 
@@ -50,26 +50,19 @@ Este anexo trae las respuestas de las autoevaluaciones, el banco de preguntas de
 
 **Módulo 7.**
 
-1. Su emisividad es muy baja: refleja la radiación del entorno y la temperatura aparente no representa la de la lámina.
-2. En la mañana, mientras el sol calienta la fachada oriental; las zonas con vacío bajo el enchape se ven más calientes que las adheridas.
-3. 3 × 3 px a 4.62 mm/px: unos 14 × 14 mm.
-4. Cambiando la posición o el ángulo de la cámara: un reflejo se mueve, una anomalía real no. Además se compara con la foto visible.
-
-**Módulo 8.**
-
 1. Si entran al ajuste, el programa los ajusta y su error deja de ser una medida independiente de la exactitud.
 2. Queda mal controlada: los errores de escala e inclinación crecen hacia arriba porque el modelo se extrapola fuera de la zona de control.
 3. Del orden de 1 a 3 veces el GSD: unos 1.6 a 4.9 mm.
 4. Que ambos modelos estén en el mismo marco de referencia (la misma red de puntos de control), que se conozca su exactitud y que el cambio detectado supere la incertidumbre combinada.
 
-**Módulo 9.**
+**Módulo 8.**
 
 1. Alturas mezcladas: no se aplicó la ondulación geoidal (h = H + N; en el laboratorio N = 30 m).
 2. Porque está en un elemento que no se modeló (albañilería de relleno, enchape, cubierta liviana). También porque el modelo trabaja con ejes y el daño está en la cara del elemento; por eso existe la tolerancia.
 3. Para que el modelo 3D y el modelo estructural queden en el mismo marco: los hallazgos caen sobre los elementos sin transformaciones adicionales y los errores de dos georreferencias distintas no se suman.
 4. Cuanto mayor es la D/C, menor es la reserva de capacidad del elemento: el mismo daño es más preocupante y sube la prioridad de verificación.
 
-**Módulo 10.**
+**Módulo 9.**
 
 1. "Se observa en la cara exterior del pilar C1-02 una fisura inclinada unos 45°, de 0.9 m de largo y ancho estimado de 1.5 mm ± 0.4 mm (observación). El patrón es compatible con corte, posiblemente de origen sísmico (interpretación). Severidad 3, confianza B."
 2. El GSD logrado y el RMS en los puntos de chequeo.
@@ -89,8 +82,8 @@ El examen tiene 15 preguntas de selección múltiple tomadas de este banco y 2 p
 | 5 | Una fisura es | a) Paralela a la tracción que la abrió · b) Perpendicular a la tracción que la abrió · c) Siempre vertical · d) Independiente de los esfuerzos | b |
 | 6 | Fisuras paralelas a las barras con manchas de óxido indican | a) Retracción plástica · b) Corrosión de la armadura · c) Flexión · d) Asentamiento | b |
 | 7 | Grietas en X en un muro de albañilería indican | a) Retracción · b) Corte cíclico (sismo) · c) Corrosión · d) Humedad | b |
-| 8 | Sobre una lámina de aluminio pulido, la cámara térmica | a) Mide bien su temperatura · b) Mide sobre todo el reflejo del entorno · c) Siempre la muestra fría · d) Necesita emisividad de 0.95 | b |
-| 9 | Para buscar desprendimientos de enchape con carga solar en una fachada oriental se vuela | a) En la mañana, durante el calentamiento · b) A mediodía, con la fachada en sombra · c) Después de la lluvia · d) A cualquier hora | a |
+| 8 | Para fotografiar una fisura fina desde 10 m conviene usar | a) Zoom digital · b) Zoom óptico · c) Acercarse a 2 m · d) Subir el ISO | b |
+| 9 | Un enchape abombado sobre una vereda se confirma | a) Con una foto más cercana · b) Con percusión en sitio · c) Con el ortomosaico · d) No hace falta confirmarlo | b |
 | 10 | La exactitud de un modelo fotogramétrico se reporta con | a) El RMS de los GCP · b) El error de reproyección · c) El RMS de puntos de chequeo independientes · d) El número de fotos | c |
 | 11 | Todos los hallazgos aparecen 30 m más abajo que en la realidad; lo más probable es | a) Huso UTM equivocado · b) Alturas elipsoidales y ortométricas mezcladas · c) Norte de cuadrícula · d) Error de GSD | b |
 | 12 | Junto a una fachada alta, el dron deriva con los mandos quietos; la causa más probable es | a) Batería baja · b) GNSS degradado · c) Cámara mal configurada · d) Tarjeta llena | b |
@@ -108,7 +101,7 @@ El examen tiene 15 preguntas de selección múltiple tomadas de este banco y 2 p
 - **A.** Construya la matriz de riesgos de la inspección de la cubierta de un centro comercial en funcionamiento, con al menos cuatro peligros y sus mitigaciones.
 - **B.** Para detectar fisuras de 1 mm en una fachada de 20 pisos, compare acercarse con la gran angular frente a usar el zoom desde más lejos. Justifique con cálculos de GSD, distancia y número de fotos.
 - **C.** El hallazgo H05 del laboratorio no cae en ningún elemento del modelo. Explique por qué, cómo lo reporta y qué verificación pide.
-- **D.** Un termograma muestra una zona caliente en un enchape a las 9:00 en una fachada oriental. Describa cómo confirma si es un desprendimiento.
+- **D.** Una foto muestra manchas de óxido y fisuras paralelas a las barras en una viga de borde de un edificio en la costa. Describa cómo la reporta (observación, causa probable, severidad y confianza) y qué verificación pide.
 
 Criterio de las preguntas abiertas: respuesta correcta y justificada, 100 %; correcta sin justificación suficiente, 60 %; con errores de concepto, 20 %; sin respuesta, 0 %.
 
@@ -117,11 +110,11 @@ Criterio de las preguntas abiertas: respuesta correcta y justificada, 100 %; cor
 Cada grupo de 3 o 4 participantes inspecciona el caso conductor y entrega:
 
 1. Plan de misión completo (anexo B) con matriz de riesgos.
-2. Datos de vuelo: fotos de cobertura y de detalle, térmicas si aplican, bitácora y listas de chequeo diligenciadas. En modalidad virtual se usa el conjunto de datos del curso.
+2. Datos de vuelo: fotos de cobertura y de detalle, bitácora y listas de chequeo diligenciadas. En modalidad virtual se usa el conjunto de datos del curso.
 3. Productos fotogramétricos: ortomosaico de al menos una fachada e informe de calidad con RMS en puntos de chequeo.
 4. Al menos 8 hallazgos con ficha completa, severidad y confianza.
 5. Ubicación de los hallazgos en el modelo estructural (archivo de hallazgos y tabla hallazgo-elemento-D/C), o con el edificio de ejemplo en modalidad virtual.
-6. Informe de inspección con la estructura del módulo 10.
+6. Informe de inspección con la estructura del módulo 9.
 7. Presentación de 15 minutos con preguntas del jurado.
 
 **Rúbrica:**
@@ -136,7 +129,7 @@ Cada grupo de 3 o 4 participantes inspecciona el caso conductor y entrega:
 
 Nota del proyecto = suma de peso × nivel alcanzado en cada criterio. El proyecto vale el 40 % de la nota del curso.
 
-## Cómo conducir el proyecto final (guía del instructor)
+## Cómo conducir el proyecto final (guía del relator)
 
 **Idea central:** el proyecto final demuestra que el grupo puede recorrer solo el flujo completo, del plan al informe; la evaluación mira el criterio, no la cantidad de fotos.
 
@@ -144,7 +137,7 @@ Nota del proyecto = suma de peso × nivel alcanzado en cada criterio. El proyect
 
 - Entregue el enunciado y la rúbrica el día 3, junto con la lista de entregables y la hora límite (una carpeta compartida por grupo, 30 minutos antes de la jornada).
 - Pida que la presentación siga este orden: pregunta del encargo, método, hallazgos principales, prioridad con D/C y deriva, recomendaciones y limitaciones.
-- Forme el jurado con dos o tres personas: el ingeniero civil del curso, el operador RPAS y, si es posible, alguien externo (un inspector o un administrador de condominio, que es quien lee estos informes).
+- Forme el jurado con el relator y, si es posible, uno o dos invitados: un ingeniero civil calculista (quien recibe los hallazgos para evaluarlos), el operador RPAS de las prácticas o un administrador de condominio (quien lee estos informes).
 - Reúna las observaciones de seguridad de las prácticas de cada grupo: alimentan el primer criterio de la rúbrica.
 
 **Secuencia de la jornada (240 min, para seis grupos):**

@@ -50,7 +50,7 @@ La DGAC publicó en abril de 2026, para opinión, un borrador de la **DAN 151 Ed
 - Fotografíe la estructura, no el interior de las viviendas; pida a los residentes cerrar cortinas en el horario del vuelo.
 - Defina en el contrato quién es el responsable del tratamiento de las imágenes, para qué se usan, cuánto tiempo se guardan y quién accede.
 - Difumine rostros y patentes antes de entregar o publicar imágenes.
-- Guarde el material en un lugar con control de acceso (módulo 10).
+- Guarde el material en un lugar con control de acceso (módulo 9).
 
 **Seguridad y salud en el trabajo:**
 
@@ -60,7 +60,7 @@ La DGAC publicó en abril de 2026, para opinión, un borrador de la **DAN 151 Ed
 - Elementos de protección para el equipo de terreno: casco bajo la zona de vuelo, chaleco reflectante, protección solar e hidratación.
 - Baterías de polímero de litio (LiPo): se transportan y cargan en bolsas o contenedores ignífugos, nunca se cargan sin supervisión, y una batería hinchada o golpeada se retira de servicio.
 
-**Normativa de ingeniería.** El dron es un medio de inspección; la evaluación sigue la normativa chilena de construcción:
+**Normativa de construcción.** El dron es un medio de inspección; la evaluación sigue la normativa chilena de construcción:
 
 - NCh 433, diseño sísmico de edificios, con el DS 61 de 2011 del MINVU. Su **Anexo A (informativo), Daño sísmico y recuperación estructural**, trata la evaluación del daño y los requisitos del proyecto de recuperación. La NCh 433 está en proceso de actualización: verifique la versión oficial.
 - NCh 430 y DS 60 de 2011: hormigón armado (adoptan el ACI 318 con adecuaciones nacionales).
@@ -149,7 +149,7 @@ Después de volar: bitácora de vuelo, reporte de incidentes (los que la DAN 151
 3. Un peligro tiene P = 4 y S = 4. ¿Se puede volar? ¿Qué haría?
 4. ¿Qué medidas toma para no vulnerar la intimidad de los residentes, y qué ley la protege?
 
-## Cómo explicar este módulo (guía del instructor)
+## Cómo explicar este módulo (guía del relator)
 
 **Idea central que el grupo debe llevarse:** antes de despegar, cada inspección tiene que responder tres preguntas: ¿qué norma de la DGAC la rige?, ¿quién autoriza el lugar? y ¿qué riesgo residual aceptamos?
 
@@ -163,14 +163,14 @@ Después de volar: bitácora de vuelo, reporte de incidentes (los que la DAN 151
 
 **Secuencia de la clase (240 min):**
 
-| Min | Bloque | Qué hace el instructor | Qué hacen los participantes |
+| Min | Bloque | Qué hace el relator | Qué hacen los participantes |
 | --- | --- | --- | --- |
 | 0-15 | Apertura | Relata un incidente: un dron cae sobre una vereda durante una inspección. Pregunta quién responde y qué papeles le pedirán | Proponen responsables y documentos |
 | 15-60 | 2.1 DGAC | Proyecta la DAN 151 y la recorre con el grupo; dibuja el árbol de decisión (área poblada → DAN 151; comercial → AOC; sin fines de lucro → CEO) | Buscan en el texto oficial cada requisito de la tabla |
 | 60-75 | Escenarios | Reparte las cuatro tarjetas | En grupos deciden norma, certificado y autorizaciones |
 | 75-90 | Pausa |  |  |
 | 90-135 | 2.2 Otras obligaciones | Explica condominio, permiso municipal, datos personales y seguridad laboral con una foto de fachada con personas en las ventanas y la demostración de la batería | Marcan en la foto qué se debe difuminar; repasan el manejo de baterías |
-| 135-165 | 2.2 Normativa de ingeniería | Muestra el mapa de normas: NCh 433 y su Anexo A, NCh 430, NCh 2123, fichas del MINVU; indica qué parte del informe alimenta cada una | Toman nota del mapa |
+| 135-165 | 2.2 Normativa de construcción | Muestra el mapa de normas: NCh 433 y su Anexo A, NCh 430, NCh 2123, fichas del MINVU; indica qué parte del informe alimenta cada una | Toman nota del mapa |
 | 165-180 | 2.3 Método de riesgo | Completa con el grupo la primera fila de la matriz de ejemplo | Califican P y S en voz alta y discuten |
 | 180-225 | Taller | Circula entre los grupos y cuestiona las calificaciones | Construyen la matriz del caso conductor |
 | 225-240 | Puesta en común y cierre | Pide a cada grupo su mayor riesgo residual y por qué lo acepta | Presentan y responden la autoevaluación |

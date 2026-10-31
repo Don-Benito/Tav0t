@@ -10,7 +10,7 @@ lleva al sistema del modelo estructural con la georreferencia del proyecto y
 busca el elemento más cercano a cada uno. Un hallazgo lejos de todo elemento
 suele estar en algo que no se modeló (mampostería, enchape, cubierta liviana).
 
-El laboratorio está explicado en docs/curso_inspeccion_drones/09_georreferenciacion_e_integracion.md.
+El laboratorio está explicado en docs/curso_inspeccion_drones/08_georreferenciacion_e_integracion.md.
 """
 
 from __future__ import annotations

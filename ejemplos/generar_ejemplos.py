@@ -157,7 +157,7 @@ def puntos_control_simulados(proyecto_parametrico: dict) -> list[dict]:
     return puntos
 
 
-# Hallazgos de la inspección con dron del laboratorio del curso (módulo 9):
+# Hallazgos de la inspección con dron del laboratorio del curso (módulo 8):
 # posición real sobre la cara del elemento, en coordenadas del modelo.
 HALLAZGOS = [
     ("H01", "Fisura diagonal", "Cara exterior de la columna de esquina, tercio inferior.", "ancho ≈ 1.5 mm, largo 0.9 m",
@@ -168,8 +168,8 @@ HALLAZGOS = [
      "0.25 × 0.15 m, barra corroída visible", "Z_0388.JPG", (12.15, 1.2, 9.15)),
     ("H04", "Mapa de fisuras", "Cara superior de la losa de techumbre, sin impermeabilización.",
      "fisuras finas en malla, < 0.5 mm, unos 2 m²", "Z_0402.JPG", (9.2, 2.6, 9.56)),
-    ("H05", "Anomalía térmica", "Muro de albañilería del piso 2: zona fría con forma de mancha de humedad.",
-     "ΔT = 2.8 °C, 1.1 m²", "T_0091.JPG", (3.0, 10.12, 5.2)),
+    ("H05", "Mancha de humedad", "Muro de albañilería del piso 2: mancha de humedad con eflorescencias bajo la ventana.",
+     "1.1 m²", "Z_0091.JPG", (3.0, 10.12, 5.2)),
     ("H06", "Fisura horizontal", "Arranque de la columna de esquina, cara exterior, con eflorescencias.",
      "ancho ≈ 2 mm, en parte del perímetro", "Z_0012.JPG", (-0.25, 10.0, 0.3)),
 ]  # fmt: skip

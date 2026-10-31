@@ -12,20 +12,19 @@ Cuatro formatos acompañan cada operación: el plan de misión antes del vuelo, 
 | Información previa | Planos, modelo estructural (elementos y pisos críticos: D/C, derivas), inspecciones anteriores |
 | Entorno | Vías, andenes, vecinos, cables, árboles, helipuertos y aeródromos cercanos, fuentes de interferencia |
 | Autorización y espacio aéreo | Número de autorización de la DGAC, condiciones, horario, altura máxima, restricciones |
-| Equipo | Aeronaves (registro, masa, paracaídas), cámaras, térmica, RTK o PPK, baterías |
+| Equipo | Aeronaves (registro, masa, paracaídas), cámaras (gran angular y zoom), RTK o PPK, baterías |
 | Resolución | Detalle mínimo a ver; GSD objetivo por superficie; distancias resultantes (calculadora del curso) |
 | Malla y patrones | Por fachada y cubierta: distancia, solapes, número de pasadas y de fotos |
 | Detalles prioritarios | Lista de puntos de detalle con zoom y su justificación (cobertura, modelo) |
-| Térmica | Aplicación, ventana horaria por fachada, condiciones exigidas |
 | Puntos de control y chequeo | Número, ubicación, método de medición, marco (SIRGAS-Chile), huso, época y tipo de altura |
-| Horario | Por fachada, según la luz y la térmica |
+| Horario | Por fachada, según la luz |
 | Límites | Viento máximo, batería de regreso, distancia mínima a la estructura, altura de RTH |
 | Despegue | Punto principal y alterno (croquis) |
 | Roles | Piloto al mando, observador, operador de cámara, coordinador |
 | Riesgos | Matriz de riesgos (módulo 2) con mitigaciones y riesgo residual |
 | Emergencias | Procedimientos específicos del sitio, teléfonos, hospital |
 | Datos | Nombres de vuelos, respaldo, criterio de aceptación (nitidez, cobertura, exactitud) |
-| Aprobación | Firma del piloto al mando y del ingeniero responsable |
+| Aprobación | Firma del piloto al mando y del profesional responsable |
 
 ## B.2 Ficha de hallazgo
 
@@ -38,7 +37,7 @@ Cuatro formatos acompañan cada operación: el plan de misión antes del vuelo, 
 | Tipo de daño | Fisura, desprendimiento, corrosión, humedad, deformación, faltante |
 | Descripción | Observación: orientación, patrón, extensión, color, signos asociados |
 | Medida | Valor, método (foto, ortomosaico, nube) e incertidumbre |
-| Evidencia | Fotos de contexto y de detalle (nombres de archivo), termograma |
+| Evidencia | Fotos de contexto y de detalle (nombres de archivo) |
 | Causa probable | Interpretación, separada de la observación |
 | Información del modelo | D/C del elemento, deriva del piso |
 | Severidad | 0 a 4 (B.3) |
@@ -85,7 +84,7 @@ Los umbrales numéricos (anchos de fisura, pérdidas de sección, deformaciones)
 | --- | --- | --- |
 | A | El daño se ve con detalle suficiente y sin ambigüedad | La severidad se puede usar para decidir |
 | B | El daño es probable, pero la imagen no basta para confirmarlo o medirlo | Verificar de cerca antes de intervenir |
-| C | Indicio (por ejemplo, solo termografía o una sombra sospechosa) | Requiere inspección de cerca o ensayo |
+| C | Indicio (por ejemplo, una sombra o una mancha que puede ser otra cosa) | Requiere inspección de cerca o ensayo |
 
 La combinación de severidad alta con confianza B o C genera una verificación prioritaria, no una conclusión.
 
